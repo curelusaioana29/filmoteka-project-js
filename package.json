@@ -2,20 +2,20 @@
   "name": "filmoteka-project-js",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://github.com/curelusaioana29/filmoteka-project-js/",
+  "homepage": "https://github.com/curelusaioana29/filmoteka-project-js",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /filmoteka-project-js/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/curelusaioana29/filmoteka-project-js/"
+    "url": "git+https://github.com/curelusaioana29/filmoteka-project-js.git"
   },
   "keywords": [],
   "author": "Team8-GoIt-2023",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/curelusaioana29/filmoteka-project-js/"
+    "url": "https://github.com/curelusaioana29/filmoteka-project-js/issues"
   },
   "dependencies": {
     "modern-normalize": "^1.1.0"
