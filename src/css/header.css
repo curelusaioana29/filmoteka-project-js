@@ -1,0 +1,393 @@
+:root {
+  --active-colo: #0d96fa;
+  --hover-color: #0d96fa;
+  --backgroun-color: #fff;
+  --transition: 350ms ease-in-out;
+  --title-transition: 500ms ease-in-out;
+}
+body {
+  font-family: Roboto;
+  font-weight: 500;
+  width: 100%;
+  max-width: 1280px;
+  min-width: 320px;
+  margin: 0px auto;
+  background-color: var(--backgroun-color);
+}
+/* Header */
+header {
+  margin: 20px;
+  height: 460px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+header ul.background-list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+header li.background-one {
+  list-style: none;
+  background-image: url(../images/mobile-header-first-background.jpg);
+}
+header li.background-two {
+  list-style: none;
+  background-image: url(../images/mobile-header-second-background.jpg);
+}
+header li.background-three {
+  list-style: none;
+  background-image: url(../images/mobile-header-third-background.jpg);
+}
+header li.displayed {
+  flex: 1;
+  background-size: cover;
+  border-radius: 10px;
+}
+header div.header-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* Anchors */
+header ul.anchors {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  padding: 0px;
+  margin: 0px;
+}
+header ul.anchors li {
+  list-style: none;
+}
+header ul.anchors button {
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  line-height: normal;
+  text-transform: uppercase;
+  display: flex;
+  padding: 10px 26px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 100px;
+  transition: var(--transition);
+  box-shadow: 0px 2px 3px 1px;
+  cursor: pointer;
+  border: none;
+}
+header ul.anchors button.home {
+  color: #fff;
+  background: #000000dd;
+}
+header ul.anchors button.home:hover {
+  color: var(--hover-color);
+}
+header ul.anchors button.library {
+  color: #000;
+  background: #ffffffdd;
+}
+header ul.anchors button.library:hover {
+  color: var(--hover-color);
+}
+/* Form */
+header form.search-movie {
+  position: relative;
+  margin: 0px 0px;
+}
+header form.search-movie input {
+  width: 100%;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 100px;
+  background: #ffffffdd;
+  outline: none;
+  border: none;
+  box-shadow: 0px 1px 1px 0px;
+  padding: 10px 14px;
+  color: #000;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: var(--transition);
+}
+header form.search-movie input:hover {
+  box-shadow: 0px 1px 1px 0px var(--hover-color);
+}
+header form.search-movie button.search {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  padding: 0px;
+  margin: 0px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+header form.search-movie button.search svg {
+  width: 18px;
+  height: 18px;
+  transition: var(--transition);
+}
+header form.search-movie:hover svg {
+  color: var(--hover-color);
+}
+/* Title */
+header div.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+header div.title-container svg {
+  stroke: #000000dd;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+header div.title-container ul {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+}
+header div.title-container ul li {
+  list-style: none;
+}
+header div.title-container ul a {
+  color: #ffffffdd;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  line-height: normal;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--title-transition);
+}
+header div.title-container ul:hover a {
+  color: var(--hover-color);
+}
+/* User List */
+header div.user-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  position: absolute;
+  top: 55%;
+}
+header div.remove {
+  display: none;
+}
+header div.user-list ul.user-list {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 4px;
+}
+header div.user-list ul.user-list li {
+  list-style: none;
+}
+header div.user-list ul.user-list button {
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  line-height: normal;
+  text-transform: uppercase;
+  display: flex;
+  padding: 10px 26px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 100px;
+  transition: var(--transition);
+  color: #000;
+  box-shadow: 0px 2px 3px 1px;
+  border: none;
+  cursor: pointer;
+  background-color: #ffffffdd;
+}
+header div.user-list ul.user-list button:hover,
+header div.user-list button.clear-wathed-list:hover,
+header div.user-list button.clear-queue-list:hover {
+  color: var(--hover-color);
+}
+header div.user-list button.clear-wathed-list,
+header div.user-list button.clear-queue-list {
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  display: flex;
+  padding: 10px 26px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 100px;
+  transition: var(--transition);
+  color: #000;
+  box-shadow: 0px 2px 3px 1px;
+  background-color: #ffffffdd;
+  border: none;
+  cursor: pointer;
+}
+header div.user-list button.clear-queue-list {
+  display: none;
+}
+/********** Tablet ( 480px - 768px ) **********/
+@media screen and (min-width: 480px) {
+  /* Header */
+  header {
+    margin: 32px;
+    height: 286px;
+    justify-content: space-between;
+  }
+  header li.background-one {
+    background-image: url(../images/desktop-tablet-header-first-background.jpg);
+  }
+  header li.background-two {
+    background-image: url(../images/desktop-tablet-header-second-background.jpg);
+  }
+  header li.background-three {
+    background-image: url(../images/desktop-tablet-header-third-background.jpg);
+  }
+  header li.displayed {
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+  }
+  /* Anchors */
+  header ul.anchors {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    padding: 0px;
+    margin: 0px;
+  }
+  header ul.anchors button {
+    padding: 12px 24px;
+  }
+  /* Form */
+  header form.search-movie {
+    width: 40%;
+  }
+  header form.search-movie input {
+    padding: 20px 20px;
+  }
+  header form.search-movie button.search {
+    top: 5px;
+    right: 10px;
+  }
+  /* Title */
+  header div.title-container {
+    gap: 15px;
+    justify-content: end;
+  }
+  header div.title-container svg {
+    width: 40px;
+    height: 40px;
+  }
+  header div.title-container ul a {
+    font-size: 40px;
+    color: #000000dd;
+  }
+  /* User List */
+  header div.user-list {
+    top: 60%;
+  }
+  header div.user-list ul.user-list {
+    gap: 15px;
+  }
+  header div.user-list ul.user-list button {
+    padding: 12px 26px;
+  }
+  header div.user-list button.clear-wathed-list,
+  header div.user-list button.clear-queue-list {
+    padding: 12px 26px;
+  }
+}
+
+/********** Desktop ( 768px - 1200px ) **********/
+@media screen and (min-width: 768px) {
+  /* Header */
+  header {
+    height: 380px;
+  }
+  header div.header-container {
+    align-items: center;
+  }
+  /* Anchors */
+  header ul.anchors {
+    width: 100%;
+    justify-content: start;
+    gap: 20px;
+  }
+  header ul.anchors button {
+    padding: 14px 32px;
+  }
+  /* Form */
+  header form.search-movie input {
+    padding: 26px 25px;
+    font-size: 20px;
+  }
+  header form.search-movie button.search {
+    top: 10px;
+    right: 15px;
+  }
+  /* Title */
+  header div.title-container {
+    width: 100%;
+    justify-content: start;
+  }
+  header div.title-container svg {
+    width: 59px;
+    height: 59px;
+  }
+  header div.title-container ul a {
+    font-size: 60px;
+    color: #ffffffdd;
+  }
+  /* User List */
+  header div.user-list {
+    top: 55%;
+  }
+  header div.user-list ul.user-list button {
+    padding: 14px 32px;
+  }
+  header div.user-list button.clear-wathed-list,
+  header div.user-list button.clear-queue-list {
+    padding: 14px 32px;
+  }
+}
+
+
+
+div.movies-container,
+div.library-container {
+  width: 100%;
+  height: 100%;
+  background-color: #0d96fa;
+}
+div.hidden-home {
+  display: none;
+}

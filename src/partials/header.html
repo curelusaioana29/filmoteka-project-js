@@ -1,0 +1,69 @@
+<!-- Header -->
+<header id="header-bkg">
+  <ul class="background-list">
+    <li class="background-one displayed"></li>
+    <li class="background-two"></li>
+    <li class="background-three"></li>
+  </ul>
+  <div class="header-container">
+    <!-- Anchors -->
+    <ul class="anchors">
+      <li><button class="home">HOME</button></li>
+      <li><button class="library">MY LIBRARY</button></li>
+    </ul>
+    <!-- Form -->
+    <form class="search-movie">
+      <input
+        type="text"
+        name="searchQuery"
+        autocomplete="on"
+        placeholder="Movie Search"
+      />
+      <button class="search" type="submit">
+        <svg>
+          <use href="./images/filmoteka-icons.svg#search-icon"></use>
+        </svg>
+      </button>
+    </form>
+    <!-- Title Container -->
+    <div class="title-container">
+      <!-- Icon Logo -->
+      <svg>
+        <use href="./images/filmoteka-icons.svg#icon-film"></use>
+      </svg>
+      <!-- Title List -->
+      <ul>
+        <li><a class="play-title" href="./index.html">F</a></li>
+        <li><a class="play-title" href="./index.html">I</a></li>
+        <li><a class="play-title" href="./index.html">L</a></li>
+        <li><a class="play-title" href="./index.html">M</a></li>
+        <li><a class="play-title" href="./index.html">O</a></li>
+        <li><a class="play-title" href="./index.html">T</a></li>
+        <li><a class="play-title" href="./index.html">E</a></li>
+        <li><a class="play-title" href="./index.html">K</a></li>
+        <li><a class="play-title" href="./index.html">A</a></li>
+      </ul>
+    </div>
+    <!-- User List -->
+    <div class="user-list ">
+      <ul class="user-list">
+        <li><button class="watched">WATCHED</button></li>
+        <li><button class="queue">QUEUE</button></li>
+      </ul>
+      <button class="clear-wathed-list">CLEAR WATCHED LIST</button>
+      <button class="clear-queue-list">CLEAR QUEUE LIST</button>
+    </div>
+  </div>
+</header>
+
+<div class="movies-container">
+  <h1>movies container active home</h1>
+</div>
+<div class="library-container hidden-home">
+  <div class="watched active-library">
+    <h1>watched active library</h1>
+  </div>
+  <div class="queue">
+    <h1>queue</h1>
+  </div>
+</div>
