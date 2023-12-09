@@ -1,7 +1,7 @@
 // Header Backgroun Change
 document.addEventListener('DOMContentLoaded', function () {
   const listItems = document.querySelectorAll('.background-list li');
-  const intervalDuration = 5000; // Change the time for background change
+  const intervalDuration = 60000; // Change the time for background change
 
   function moveDisplayedClass() {
     const currentDisplayed = document.querySelector(
@@ -36,7 +36,7 @@ jumpLetters();
 
 setInterval(function () {
   jumpLetters();
-}, 5000); // Change the time for Letters Jump
+}, 60000); // Change the time for Letters Jump
 // Manipulate Scroll Buttons
 document.addEventListener('DOMContentLoaded', function () {
   var topArrow = document.querySelector('.arrows a[href="#top"]');
