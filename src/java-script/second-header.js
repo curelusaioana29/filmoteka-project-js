@@ -1,11 +1,9 @@
 const apiKey = '1d5cb9487b50db9f810f217d59251cf8'; // Replace with your TMDb API key
-const trendingMoviesEndpoint =
-  'https://api.themoviedb.org/3/trending/movie/week';
+const trendingMoviesEndpoint = 'https://api.themoviedb.org/3/trending/movie/week';
 const searchMoviesEndpoint = 'https://api.themoviedb.org/3/search/movie';
 const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const moviesContainer = document.querySelector('.movies-container');
   const searchForm = document.querySelector('.search-movie');
   const searchInput = searchForm.querySelector('input');
   const movieListContainer = document.getElementById('movieList');
@@ -16,9 +14,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (movies.length === 0) {
       Notiflix.Notify.failure('Movie not found!');
     } else {
+      // Create one ul element
+      const movieUl = document.createElement('ul');
+
       movies.forEach(movie => {
         if (movie.poster_path !== null) {
-          const movieDiv = document.createElement('div');
+          const cardLi = document.createElement('li');
           const image = document.createElement('img');
           const title = document.createElement('h2');
           const overview = document.createElement('p');
@@ -30,14 +31,18 @@ document.addEventListener('DOMContentLoaded', async () => {
           overview.textContent = movie.overview;
           voteAverage.textContent = movie.vote_average;
 
-          movieDiv.appendChild(image);
-          movieDiv.appendChild(title);
-          movieDiv.appendChild(overview);
-          movieDiv.appendChild(voteAverage);
+          cardLi.appendChild(image);
+          cardLi.appendChild(title);
+          cardLi.appendChild(overview);
+          cardLi.appendChild(voteAverage);
 
-          movieListContainer.appendChild(movieDiv);
+          // Append each li to the ul
+          movieUl.appendChild(cardLi);
         }
       });
+
+      // Append the ul to the movieListContainer
+      movieListContainer.appendChild(movieUl);
     }
   };
 
