@@ -1,73 +1,75 @@
-const apiKey = '1d5cb9487b50db9f810f217d59251cf8'; // Replace with your TMDb API key
-const trendingMoviesEndpoint = 'https://api.themoviedb.org/3/trending/movie/week';
-const searchMoviesEndpoint = 'https://api.themoviedb.org/3/search/movie';
-const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
+import {
+  fetchMovies,
+  apiKey,
+  trendingMoviesEndpoint,
+  searchMoviesEndpoint,
+  imageBaseURL,
+  movieDetailsEndpoint,
+} from './api';
+import { showFailureNotification } from './notification';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const searchForm = document.querySelector('.search-movie');
   const searchInput = searchForm.querySelector('input');
   const movieListContainer = document.getElementById('movieList');
 
-  const displayMovies = movies => {
+  async function displayMovies(movies) {
     movieListContainer.innerHTML = '';
 
     if (movies.length === 0) {
-      Notiflix.Notify.failure('Movie not found!');
+      showFailureNotification('Movie not found!');
     } else {
-      // Create one ul element
       const movieUl = document.createElement('ul');
 
-      movies.forEach(movie => {
+      for (const movie of movies) {
         if (movie.poster_path !== null) {
           const cardLi = document.createElement('li');
           const image = document.createElement('img');
           const title = document.createElement('h2');
-          const overview = document.createElement('p');
+          const genre = document.createElement('span');
           const voteAverage = document.createElement('span');
+          const airDate = document.createElement('span');
+
+          const detailsUrl = `${movieDetailsEndpoint}/${movie.id}?api_key=${apiKey}`;
+          const details = await fetchMovies(detailsUrl);
 
           image.src = `${imageBaseURL}${movie.poster_path}`;
           image.alt = `${movie.title} Poster`;
           title.textContent = movie.title;
-          overview.textContent = movie.overview;
-          voteAverage.textContent = movie.vote_average;
+          genre.textContent = `${details.genres
+            .map(genre => genre.name)
+            .join(', ')}`;
+
+          airDate.textContent = `${details.release_date}`;
+          const releaseYear = new Date(details.release_date).getFullYear();
+          airDate.textContent = `${releaseYear}`;
+
+          voteAverage.textContent = `${movie.vote_average}`;
 
           cardLi.appendChild(image);
           cardLi.appendChild(title);
-          cardLi.appendChild(overview);
+          cardLi.appendChild(genre);
+          cardLi.appendChild(airDate);
           cardLi.appendChild(voteAverage);
-
-          // Append each li to the ul
           movieUl.appendChild(cardLi);
         }
-      });
+      }
 
-      // Append the ul to the movieListContainer
       movieListContainer.appendChild(movieUl);
     }
-  };
+  }
 
-  const fetchMovies = async url => {
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data.results;
-    } catch (error) {
-      console.error('Error fetching movies:', error);
-      return [];
-    }
-  };
-
-  const performSearch = async searchQuery => {
+  async function performSearch(searchQuery) {
     if (searchQuery.trim() === '') {
       const trendingMoviesUrl = `${trendingMoviesEndpoint}?api_key=${apiKey}`;
       const trendingMovies = await fetchMovies(trendingMoviesUrl);
-      displayMovies(trendingMovies);
+      displayMovies(trendingMovies.results);
     } else {
       const apiUrl = `${searchMoviesEndpoint}?api_key=${apiKey}&query=${searchQuery}`;
       const searchResults = await fetchMovies(apiUrl);
-      displayMovies(searchResults);
+      displayMovies(searchResults.results);
     }
-  };
+  }
 
   searchForm.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -82,5 +84,5 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const trendingMoviesUrl = `${trendingMoviesEndpoint}?api_key=${apiKey}`;
   const trendingMovies = await fetchMovies(trendingMoviesUrl);
-  displayMovies(trendingMovies);
+  displayMovies(trendingMovies.results);
 });
