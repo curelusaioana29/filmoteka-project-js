@@ -7,7 +7,6 @@
   --second-backgroun-color: #fff;
   --transition: 350ms ease-in-out;
   --title-transition: 500ms ease-in-out;
-  --background: 1000ms ease-in-out;
 }
 body {
   font-family: Roboto;
