@@ -5,6 +5,8 @@
   --transition: 350ms ease-in-out;
   --title-transition: 500ms ease-in-out;
 }
+
+
 body {
   font-family: Roboto;
   font-weight: 500;
@@ -283,7 +285,9 @@ div.arrows ul.arrows a {
   transition: var(--transition);
 }
 div.arrows ul.arrows a:hover {
-  background-color: #0d96fadd;
+  background-color: Uncaught (in promise) TypeError: Cannot set properties of null (setting 'innerHTML')
+  at renderPagination (main.js:166:34)
+  at displayMovies (main.js:160:7);
 }
 div.arrows ul.arrows svg {
   width: 20px;
