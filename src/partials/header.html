@@ -8,8 +8,12 @@
   <div class="header-container">
     <!-- Anchors -->
     <ul class="anchors">
-      <li><button class="home">HOME</button></li>
-      <li><button class="library">MY LIBRARY</button></li>
+      <li class="site-nav__item">
+        <button class="home js-home" data-request="home" aria-label="home">HOME</button>
+      </li>
+      <li class="site-nav__item">
+        <button class="library js-library" data-request="library" aria-label="my library">MY LIBRARY</button>
+      </li>
     </ul>
     <!-- Form -->
     <form class="search-movie">
@@ -47,10 +51,14 @@
     <!-- User List -->
     <div class="user-list">
       <ul class="user-list">
-        <li><button class="watched">WATCHED</button></li>
-        <li><button class="queue">QUEUE</button></li>
+        <li class="library__item">
+          <button class="watched button--library"data-request="watched" aria-label="watched" >WATCHED</button>
+        </li>
+        <li class="library__item">
+          <button class="queue button--library" data-request="queue" aria-label="queue">QUEUE</button>
+        </li>
       </ul>
-      <button class="clear-wathed-list">CLEAR WATCHED LIST</button>
+      <button class="clear-wathed-list button--library library__item--button" data-request="clear">CLEAR WATCHED LIST</button>
       <button class="clear-queue-list">CLEAR QUEUE LIST</button>
     </div>
   </div>
