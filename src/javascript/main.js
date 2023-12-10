@@ -89,7 +89,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
 
-// COD PROBA PENTRU PAGINARE//
 // import {
 //   fetchMovies,
 //   apiKey,
