@@ -1,41 +1,16 @@
-// Assuming you have axios and fetchMovies function defined
+export const apiKey = '1d5cb9487b50db9f810f217d59251cf8';
+export const trendingMoviesEndpoint = 'https://api.themoviedb.org/3/trending/movie/week';
+export const searchMoviesEndpoint = 'https://api.themoviedb.org/3/search/movie';
+export const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
+export const movieDetailsEndpoint = 'https://api.themoviedb.org/3/movie';
 
-const apiKey = "1d5cb9487b50db9f810f217d59251cf8";
-const moviesContainer = document.querySelector('.movies-container');
-const searchForm = document.querySelector('.search-movie');
-const searchInput = searchForm.querySelector('input');
-
-// Function to display movies in the container
-const displayMovies = (movies) => {
-  moviesContainer.innerHTML = ""; // Clear previous content
-
-  movies.forEach(movie => {
-    const movieElement = document.createElement('div');
-    movieElement.classList.add('movie');
-    // Customize the display as per your requirement
-    movieElement.innerHTML = `<p>${movie.title}</p>`;
-    moviesContainer.appendChild(movieElement);
-  });
-};
-
-// Function to fetch movies based on search query
-const fetchMovies = async (query) => {
-  const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`;
-
+export async function fetchMovies(url) {
   try {
-    const response = await axios.get(apiUrl);
-    const movies = response.data.results;
-    displayMovies(movies);
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.error("Error fetching movies:", error);
+    console.error('Error fetching movies:', error);
+    return {};
   }
-};
-
-// Event listener for form submission
-searchForm.addEventListener('submit', function (event) {
-  event.preventDefault();
-  const searchQuery = searchInput.value.trim();
-  if (searchQuery !== "") {
-    fetchMovies(searchQuery);
-  }
-});
+}
