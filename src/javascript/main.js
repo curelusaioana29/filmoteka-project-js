@@ -6,7 +6,7 @@ import {
   imageBaseURL,
   movieDetailsEndpoint,
 } from './api';
-import { showFailureNotification } from './notification2';
+import { showFailureNotification } from './notification.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const searchForm = document.querySelector('.search-movie');
