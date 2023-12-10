@@ -1,7 +1,10 @@
 :root {
-  --active-colo: #0d96fa;
-  --hover-color: #0d96fa;
+  --color: #fff;
+  --second-color: #000;
+  --active-colo: #ffffff44;
+  --hover-color: #ffffff44;
   --backgroun-color: #fff;
+  --second-backgroun-color: #fff;
   --transition: 350ms ease-in-out;
   --title-transition: 500ms ease-in-out;
 }
@@ -12,7 +15,17 @@ body {
   max-width: 1280px;
   min-width: 320px;
   margin: 0px auto;
-  background-color: var(--backgroun-color);
+}
+body::-webkit-scrollbar {
+  width: 4px;
+}
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #0d96fadd;
+  height: 20%;
+  cursor: pointer;
 }
 /* Header */
 header {
@@ -22,6 +35,8 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: transparent;
+  border-radius: 25px;
 }
 header ul.background-list {
   padding: 0;
@@ -29,23 +44,25 @@ header ul.background-list {
   display: flex;
   width: 100%;
   height: 100%;
+  border-radius: 25px;
+}
+header ul.background-list li {
+  border-radius: 25px;
+  list-style: none;
+  transition: var(--transition);
+}
+header li.displayed {
+  background-size: cover;
+  flex: 1;
 }
 header li.background-one {
-  list-style: none;
   background-image: url(../images/mobile-header-first-background.jpg);
 }
 header li.background-two {
-  list-style: none;
   background-image: url(../images/mobile-header-second-background.jpg);
 }
 header li.background-three {
-  list-style: none;
   background-image: url(../images/mobile-header-third-background.jpg);
-}
-header li.displayed {
-  flex: 1;
-  background-size: cover;
-  border-radius: 10px;
 }
 header div.header-container {
   position: absolute;
@@ -77,7 +94,7 @@ header ul.anchors button {
   line-height: normal;
   text-transform: uppercase;
   display: flex;
-  padding: 10px 26px;
+  padding: 8px 26px;
   align-items: flex-start;
   gap: 10px;
   border-radius: 100px;
@@ -87,18 +104,29 @@ header ul.anchors button {
   border: none;
 }
 header ul.anchors button.home {
-  color: #fff;
+  color: var(--color);
   background: #000000dd;
 }
 header ul.anchors button.home:hover {
-  color: var(--hover-color);
+  color: var(--second-color);
+  background-color: #00000011;
+  box-shadow: 1px 1px 10px 2px var(--second-color);
+  font-weight: 900;
 }
 header ul.anchors button.library {
-  color: #000;
+  color: var(--second-color);
   background: #ffffffdd;
 }
-header ul.anchors button.library:hover {
-  color: var(--hover-color);
+header ul.anchors button.library:hover,
+header form.search-movie input:hover,
+header form.search-movie input:focus,
+header div.user-list ul.user-list button:hover,
+header div.user-list button.clear-wathed-list:hover,
+header div.user-list button.clear-queue-list:hover {
+  color: var(--second-color);
+  background-color: var(--hover-color);
+  box-shadow: 1px 1px 10px 2px var(--second-color);
+  font-weight: 900;
 }
 /* Form */
 header form.search-movie {
@@ -107,7 +135,7 @@ header form.search-movie {
 }
 header form.search-movie input {
   width: 100%;
-  height: 34px;
+  height: 30px;
   flex-shrink: 0;
   border-radius: 100px;
   background: #ffffffdd;
@@ -115,19 +143,23 @@ header form.search-movie input {
   border: none;
   box-shadow: 0px 1px 1px 0px;
   padding: 10px 14px;
-  color: #000;
+  color: var(--second-color);
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   transition: var(--transition);
 }
-header form.search-movie input:hover {
-  box-shadow: 0px 1px 1px 0px var(--hover-color);
+header form.search-movie input:focus {
+  color: var(--active-colo);
+}
+header form.search-movie input:hover::placeholder,
+header form.search-movie input:focus::placeholder {
+  color: var(--active-colo);
 }
 header form.search-movie button.search {
   position: absolute;
-  top: 2px;
+  top: 0;
   right: 5px;
   padding: 0px;
   margin: 0px;
@@ -146,7 +178,7 @@ header form.search-movie button.search svg {
   transition: var(--transition);
 }
 header form.search-movie:hover svg {
-  color: var(--hover-color);
+  color: var(--active-colo);
 }
 /* Title */
 header div.title-container {
@@ -192,9 +224,6 @@ header div.user-list {
   position: absolute;
   top: 55%;
 }
-header div.remove {
-  display: none;
-}
 header div.user-list ul.user-list {
   margin: 0px;
   padding: 0px;
@@ -214,22 +243,18 @@ header div.user-list ul.user-list button {
   line-height: normal;
   text-transform: uppercase;
   display: flex;
-  padding: 10px 26px;
+  padding: 8px 26px;
   align-items: flex-start;
   gap: 10px;
   border-radius: 100px;
   transition: var(--transition);
-  color: #000;
+  color: var(--second-color);
   box-shadow: 0px 2px 3px 1px;
   border: none;
   cursor: pointer;
   background-color: #ffffffdd;
 }
-header div.user-list ul.user-list button:hover,
-header div.user-list button.clear-wathed-list:hover,
-header div.user-list button.clear-queue-list:hover {
-  color: var(--hover-color);
-}
+
 header div.user-list button.clear-wathed-list,
 header div.user-list button.clear-queue-list {
   text-align: center;
@@ -239,19 +264,16 @@ header div.user-list button.clear-queue-list {
   line-height: normal;
   text-transform: uppercase;
   display: flex;
-  padding: 10px 26px;
+  padding: 8px 26px;
   align-items: flex-start;
   gap: 10px;
   border-radius: 100px;
   transition: var(--transition);
-  color: #000;
+  color: var(--second-color);
   box-shadow: 0px 2px 3px 1px;
   background-color: #ffffffdd;
   border: none;
   cursor: pointer;
-}
-header div.user-list button.clear-queue-list {
-  display: none;
 }
 /* Arrows */
 div.arrows {
@@ -279,7 +301,7 @@ div.arrows ul.arrows a {
   height: 30px;
   border-radius: 50px;
   background-color: var(--backgroun-color);
-  box-shadow: 0px 1px 5px 1px #000;
+  box-shadow: 0px 1px 5px 1px var(--second-color);
   transition: var(--transition);
 }
 div.arrows ul.arrows a:hover {
@@ -318,7 +340,6 @@ div.arrows ul.arrows a:hover svg {
   header li.displayed {
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 15px;
   }
   /* Anchors */
   header ul.anchors {
@@ -330,17 +351,16 @@ div.arrows ul.arrows a:hover svg {
     margin: 0px;
   }
   header ul.anchors button {
-    padding: 12px 24px;
+    padding: 8px 24px;
   }
   /* Form */
   header form.search-movie {
     width: 40%;
   }
   header form.search-movie input {
-    padding: 20px 20px;
+    padding: 15px 15px;
   }
   header form.search-movie button.search {
-    top: 5px;
     right: 10px;
   }
   /* Title */
@@ -364,11 +384,11 @@ div.arrows ul.arrows a:hover svg {
     gap: 15px;
   }
   header div.user-list ul.user-list button {
-    padding: 12px 26px;
+    padding: 8px 26px;
   }
   header div.user-list button.clear-wathed-list,
   header div.user-list button.clear-queue-list {
-    padding: 12px 26px;
+    padding: 8px 26px;
   }
   /* Arrows */
   div.arrows {
@@ -403,15 +423,15 @@ div.arrows ul.arrows a:hover svg {
     gap: 20px;
   }
   header ul.anchors button {
-    padding: 14px 32px;
+    padding: 10px 32px;
   }
   /* Form */
   header form.search-movie input {
-    padding: 26px 25px;
+    padding: 18px 20px;
     font-size: 20px;
   }
   header form.search-movie button.search {
-    top: 10px;
+    top: 4px;
     right: 15px;
   }
   /* Title */
@@ -432,11 +452,11 @@ div.arrows ul.arrows a:hover svg {
     top: 55%;
   }
   header div.user-list ul.user-list button {
-    padding: 14px 32px;
+    padding: 10px 32px;
   }
   header div.user-list button.clear-wathed-list,
   header div.user-list button.clear-queue-list {
-    padding: 14px 32px;
+    padding: 10px 32px;
   }
   div.arrows {
     right: 32px;
