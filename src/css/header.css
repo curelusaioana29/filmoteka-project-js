@@ -16,6 +16,17 @@ body {
   min-width: 320px;
   margin: 0px auto;
 }
+body::-webkit-scrollbar {
+  width: 4px;
+}
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #0d96fadd;
+  height: 20%;
+  cursor: pointer;
+}
 /* Header */
 header {
   margin: 20px;

@@ -1,7 +1,8 @@
-import './javasscript/api.js';
-import './javasscript/header-bkg.js'
-import './javasscript/letters-jump.js';
-import './javasscript/main.js';
-import './javasscript/notification.js';
-import './javasscript/spinner.js';
-import './javasscript/up-dwn-btn.js';
+import './javascript/api.js';
+import './javascript/darkmode.js'
+import './javascript/header-bkg.js'
+import './javascript/letters-jump.js';
+import './javascript/main.js';
+import './javascript/notification.js';
+import './javascript/spinner.js';
+import './javascript/up-dwn-btn.js';
