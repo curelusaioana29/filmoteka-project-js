@@ -151,11 +151,11 @@ header form.search-movie input {
   transition: var(--transition);
 }
 header form.search-movie input:focus {
-  color: var(--active-colo);
+  color: #fff;
 }
 header form.search-movie input:hover::placeholder,
 header form.search-movie input:focus::placeholder {
-  color: var(--active-colo);
+  color: #fff;
 }
 header form.search-movie button.search {
   position: absolute;
