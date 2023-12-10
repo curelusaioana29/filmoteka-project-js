@@ -1,5 +1,3 @@
-// import refs from './refs';
-
 export default {
     spinnerShow() {
       refs.spinner.classList.remove('is-hidden__spinner');

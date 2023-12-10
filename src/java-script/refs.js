@@ -37,10 +37,10 @@ const refs = {
 
     
 
-    siteNavButtons: document.querySelector('.site-nav__list'),
+    siteNavButtons: document.querySelector('.anchors'),
     logoNav: document.querySelector('.logo-container'),
     libraryList: document.querySelector('.library__list'),
-    searchForm: document.querySelector('.search-form'),
+    searchForm: document.querySelector('.search-movie'),
     homeHeaderBtn: document.querySelector('.js-home'),
     libraryHeaderBtn: document.querySelector('.js-library'),
     watchedBtn: document.querySelector('[data-request="watched"]'),
