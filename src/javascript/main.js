@@ -1,94 +1,3 @@
-// import {
-//   fetchMovies,
-//   apiKey,
-//   trendingMoviesEndpoint,
-//   searchMoviesEndpoint,
-//   imageBaseURL,
-//   movieDetailsEndpoint,
-// } from './api';
-// import { showFailureNotification } from './notification.js';
-
-// document.addEventListener('DOMContentLoaded', async () => {
-//   const searchForm = document.querySelector('.search-movie');
-//   const searchInput = searchForm.querySelector('input');
-//   const movieListContainer = document.getElementById('movieList');
-
-//   async function displayMovies(movies) {
-//     movieListContainer.innerHTML = '';
-
-//     if (movies.length === 0) {
-//       showFailureNotification('Movie not found!');
-//     } else {
-//       const movieUl = document.createElement('ul');
-
-//       for (const movie of movies) {
-//         if (movie.poster_path !== null) {
-//           const cardLi = document.createElement('li');
-//           const image = document.createElement('img');
-//           const title = document.createElement('h2');
-//           const genre = document.createElement('span1');
-//           const voteAverage = document.createElement('span2');
-//           const airDate = document.createElement('span3');
-
-//           const detailsUrl = `${movieDetailsEndpoint}/${movie.id}?api_key=${apiKey}`;
-//           const details = await fetchMovies(detailsUrl);
-
-//           image.src = `${imageBaseURL}${movie.poster_path}`;
-//           image.alt = `${movie.title} Poster`;
-//           title.textContent = movie.title;
-//           genre.textContent = `${details.genres
-//             .map(genre => genre.name)
-//             .join(', ')}`;
-
-//           airDate.textContent = `${details.release_date}`;
-//           const releaseYear = new Date(details.release_date).getFullYear();
-//           airDate.textContent = `| ${releaseYear}`;
-
-//           voteAverage.textContent = `${movie.vote_average}`;
-
-//           cardLi.appendChild(image);
-//           cardLi.appendChild(title);
-//           cardLi.appendChild(genre);
-//           cardLi.appendChild(airDate);
-//           cardLi.appendChild(voteAverage);
-//           movieUl.appendChild(cardLi);
-//         }
-//       }
-
-//       movieListContainer.appendChild(movieUl);
-//     }
-//   }
-
-//   async function performSearch(searchQuery) {
-//     if (searchQuery.trim() === '') {
-//       const trendingMoviesUrl = `${trendingMoviesEndpoint}?api_key=${apiKey}`;
-//       const trendingMovies = await fetchMovies(trendingMoviesUrl);
-//       displayMovies(trendingMovies.results);
-//     } else {
-//       const apiUrl = `${searchMoviesEndpoint}?api_key=${apiKey}&query=${searchQuery}`;
-//       const searchResults = await fetchMovies(apiUrl);
-//       displayMovies(searchResults.results);
-//     }
-//   }
-
-//   searchForm.addEventListener('submit', function (event) {
-//     event.preventDefault();
-//     const searchQuery = searchInput.value.trim();
-//     performSearch(searchQuery);
-//   });
-
-//   searchInput.addEventListener('input', function (event) {
-//     const searchQuery = searchInput.value.trim();
-//     performSearch(searchQuery);
-//   });
-
-//   const trendingMoviesUrl = `${trendingMoviesEndpoint}?api_key=${apiKey}`;
-//   const trendingMovies = await fetchMovies(trendingMoviesUrl);
-//   displayMovies(trendingMovies.results);
-// });
-
-
-
 import {
   fetchMovies,
   apiKey,
@@ -97,6 +6,7 @@ import {
   imageBaseURL,
   movieDetailsEndpoint,
 } from './api';
+
 import { showFailureNotification } from './notification';
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -104,10 +14,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   const searchInput = searchForm.querySelector('input');
   const movieListContainer = document.getElementById('movieList');
   const paginationContainer = document.getElementById('pagination');
-  const moviesPerPage = 9; // You can change this number based on your preference
+  const moviesPerPage = 9;
 
   let currentPage = 1;
-  
 
   async function displayMovies(movies) {
     movieListContainer.innerHTML = '';
@@ -164,45 +73,91 @@ document.addEventListener('DOMContentLoaded', async () => {
     const totalPages = Math.ceil(totalMovies / moviesPerPage);
     paginationContainer.innerHTML = '';
 
-    for (let i = 1; i <= totalPages; i++) {
+    const visiblePages = 7; // Adjust this number based on your preference
+    const sideButtons = Math.floor(visiblePages / 2);
+
+    let startPage = currentPage - sideButtons;
+    let endPage = currentPage + sideButtons;
+
+    if (startPage < 1) {
+      startPage = 1;
+      endPage = Math.min(visiblePages, totalPages);
+    }
+
+    if (endPage > totalPages) {
+      endPage = totalPages;
+      startPage = Math.max(1, totalPages - visiblePages + 1);
+    }
+
+    if (startPage > 1) {
+      const firstButton = document.createElement('button');
+      firstButton.textContent = '1';
+      firstButton.addEventListener('click', () => performSearch(searchInput.value.trim(), 1));
+      paginationContainer.appendChild(firstButton);
+
+      if (startPage > 2) {
+        const ellipsis1 = document.createElement('span');
+        ellipsis1.textContent = '...';
+        paginationContainer.appendChild(ellipsis1);
+      }
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
       const pageButton = document.createElement('button');
       pageButton.textContent = i;
-      pageButton.addEventListener('click', () => {
-        currentPage = i;
-        const searchQuery = searchInput.value.trim();
-        performSearch(searchQuery);
-      });
+      pageButton.addEventListener('click', () => performSearch(searchInput.value.trim(), i));
       paginationContainer.appendChild(pageButton);
     }
-  }
 
-  async function performSearch(searchQuery) {
-    if (searchQuery.trim() === '') {
-      const trendingMoviesUrl = `${trendingMoviesEndpoint}?api_key=${apiKey}`;
-      const trendingMovies = await fetchMovies(trendingMoviesUrl);
-      displayMovies(trendingMovies.results);
-    } else {
-      const apiUrl = `${searchMoviesEndpoint}?api_key=${apiKey}&query=${searchQuery}`;
-      const searchResults = await fetchMovies(apiUrl);
-      displayMovies(searchResults.results);
+    if (endPage < totalPages) {
+      if (endPage < totalPages - 1) {
+        const ellipsis2 = document.createElement('span');
+        ellipsis2.textContent = '...';
+        paginationContainer.appendChild(ellipsis2);
+      }
+
+      const lastButton = document.createElement('button');
+      lastButton.textContent = totalPages;
+      lastButton.addEventListener('click', () => performSearch(searchInput.value.trim(), totalPages));
+      paginationContainer.appendChild(lastButton);
     }
   }
 
-  searchForm.addEventListener('submit', function (event) {
+  async function performSearch(searchQuery, page = 1) {
+    currentPage = page;
+    const totalMovies = 900; // Set the total number of movies you want to display
+    const moviesPerPage = 9;
+    const totalPages = Math.ceil(totalMovies / moviesPerPage);
+
+    const movies = [];
+
+    for (let page = 1; page <= totalPages; page++) {
+      const url = searchQuery.trim() === ''
+        ? `${trendingMoviesEndpoint}?api_key=${apiKey}&page=${page}`
+        : `${searchMoviesEndpoint}?api_key=${apiKey}&query=${searchQuery}&page=${page}`;
+
+      const results = await fetchMovies(url);
+
+      if (results.results) {
+        movies.push(...results.results);
+      }
+
+      // If you already have enough movies, break out of the loop
+      if (movies.length >= totalMovies) {
+        break;
+      }
+    }
+
+    displayMovies(movies);
+    renderPagination(movies.length);
+  }
+
+  searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    currentPage = 1; // Reset to the first page when performing a new search
-    const searchQuery = searchInput.value.trim();
-    performSearch(searchQuery);
+    performSearch(searchInput.value.trim());
   });
 
-  searchInput.addEventListener('input', function (event) {
-    currentPage = 1; // Reset to the first page when input changes
-    const searchQuery = searchInput.value.trim();
-    performSearch(searchQuery);
-  });
+  searchInput.addEventListener('input', () => performSearch(searchInput.value.trim()));
 
-  const trendingMoviesUrl = `${trendingMoviesEndpoint}?api_key=${apiKey}`;
-  const trendingMovies = await fetchMovies(trendingMoviesUrl);
-  displayMovies(trendingMovies.results);
-  
+  await performSearch('', currentPage);
 });
