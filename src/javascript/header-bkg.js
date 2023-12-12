@@ -1,3 +1,4 @@
+// Header Background Changing
 export function initializeBackgroundChange() {
   document.addEventListener('DOMContentLoaded', function () {
     const listItems = document.querySelectorAll('.background-list li');

@@ -1,3 +1,4 @@
+// api.js
 export const apiKey = '1d5cb9487b50db9f810f217d59251cf8';
 export const trendingMoviesEndpoint = 'https://api.themoviedb.org/3/trending/movie/week';
 export const searchMoviesEndpoint = 'https://api.themoviedb.org/3/search/movie';

@@ -1,3 +1,8 @@
+/** Load Movies From ApiKey
+ * Search Movie From ApiKey
+ * Movie Servicies
+ * Pagination
+ */
 import {
   fetchMovies,
   apiKey,
@@ -17,6 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const moviesPerPage = 9;
 
   let currentPage = 1;
+  let currentPageButton;
 
   async function displayMovies(movies) {
     movieListContainer.innerHTML = '';
@@ -90,9 +96,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     if (startPage > 1) {
-      const firstButton = document.createElement('button');
-      firstButton.textContent = '1';
-      firstButton.addEventListener('click', () => performSearch(searchInput.value.trim(), 1));
+      const firstButton = createPaginationButton('1');
       paginationContainer.appendChild(firstButton);
 
       if (startPage > 2) {
@@ -103,10 +107,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     for (let i = startPage; i <= endPage; i++) {
-      const pageButton = document.createElement('button');
-      pageButton.textContent = i;
-      pageButton.addEventListener('click', () => performSearch(searchInput.value.trim(), i));
+      const pageButton = createPaginationButton(i.toString());
       paginationContainer.appendChild(pageButton);
+
+      if (i === currentPage) {
+        currentPageButton = pageButton;
+        currentPageButton.classList.add('active'); // Add the 'active' class to the current page button
+      }
     }
 
     if (endPage < totalPages) {
@@ -116,11 +123,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         paginationContainer.appendChild(ellipsis2);
       }
 
-      const lastButton = document.createElement('button');
-      lastButton.textContent = totalPages;
-      lastButton.addEventListener('click', () => performSearch(searchInput.value.trim(), totalPages));
+      const lastButton = createPaginationButton(totalPages.toString());
       paginationContainer.appendChild(lastButton);
     }
+  }
+
+  function createPaginationButton(pageNumber) {
+    const pageButton = document.createElement('button');
+    pageButton.textContent = pageNumber;
+    pageButton.addEventListener('click', () => performSearch(searchInput.value.trim(), parseInt(pageNumber)));
+    return pageButton;
   }
 
   async function performSearch(searchQuery, page = 1) {
@@ -149,6 +161,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     displayMovies(movies);
+
+    // Reset 'active' class on buttons
+    if (currentPageButton) {
+      currentPageButton.classList.remove('active');
+    }
+
     renderPagination(movies.length);
   }
 

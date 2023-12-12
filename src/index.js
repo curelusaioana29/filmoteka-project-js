@@ -1,3 +1,4 @@
+// Import JavaScript Files
 import './javascript/api.js';
 import './javascript/darkmode.js';
 import './javascript/header-bkg.js';
