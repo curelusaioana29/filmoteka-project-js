@@ -1,5 +1,5 @@
 import refs from './refs.js';
-import clearList from './clear-movie-list.js';
+// import clearList from './clear-movie-list.js';
 
 
 export default function onLibraryListClick(event) {
