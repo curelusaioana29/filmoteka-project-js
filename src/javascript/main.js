@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   let currentPage = 1;
   let currentPageButton;
 
+  
+
   async function displayMovies(movies) {
     movieListContainer.innerHTML = '';
 
@@ -175,7 +177,46 @@ document.addEventListener('DOMContentLoaded', async () => {
     performSearch(searchInput.value.trim());
   });
 
-  searchInput.addEventListener('input', () => performSearch(searchInput.value.trim()));
+  let searchTimeout;
+  const debounceDelay = 0;
+
+  async function performSearch(searchQuery, page = 1) {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(async () => {
+      currentPage = page;
+      const totalMovies = 900; // Set the total number of movies you want to display
+      const totalPages = Math.ceil(totalMovies / moviesPerPage);
+
+      const movies = [];
+      const fetchPromises = [];
+
+      for (let p = 1; p <= totalPages; p++) {
+        const url = searchQuery.trim() === ''
+          ? `${trendingMoviesEndpoint}?api_key=${apiKey}&page=${p}`
+          : `${searchMoviesEndpoint}?api_key=${apiKey}&query=${searchQuery}&page=${p}`;
+
+        fetchPromises.push(fetchMovies(url));
+      }
+
+      const results = await Promise.all(fetchPromises);
+
+      results.forEach(result => {
+        if (result.results) {
+          movies.push(...result.results);
+        }
+      });
+
+      displayMovies(movies);
+
+      // Reset 'active' class on buttons
+      if (currentPageButton) {
+        currentPageButton.classList.remove('active');
+      }
+
+      renderPagination(movies.length);
+    }, debounceDelay);
+  }
+
 
   await performSearch('', currentPage);
 });
