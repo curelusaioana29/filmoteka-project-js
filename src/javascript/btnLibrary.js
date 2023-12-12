@@ -1,5 +1,5 @@
-import {Server} from './Firebase';
-import refs from './refs';
+import {Server} from './firebase.js';
+import refs from './refs.js';
 
 
 refs.addToWatchedBtn.addEventListener('click', handleWatched);
