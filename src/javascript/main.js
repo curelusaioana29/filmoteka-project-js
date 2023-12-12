@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           image.alt = `${movie.title} Poster`;
           title.textContent = movie.title;
           genre.textContent = `${details.genres
+            .slice(0, 3) // Take the first three genres
             .map(genre => genre.name)
             .join(', ')}`;
 
