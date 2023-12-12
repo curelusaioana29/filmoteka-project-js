@@ -23,5 +23,8 @@
 <symbol id="icon-arrow-left" viewBox="0 0 32 32">
 <path fill="currentColor" d="M12.586 27.414l-10-10c-0.781-0.781-0.781-2.047 0-2.828l10-10c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-6.586 6.586h19.172c1.105 0 2 0.895 2 2s-0.895 2-2 2h-19.172l6.586 6.586c0.39 0.39 0.586 0.902 0.586 1.414s-0.195 1.024-0.586 1.414c-0.781 0.781-2.047 0.781-2.828 0z"></path>
 </symbol>
+<symbol id="icon-movie" viewBox="0 0 32 32">
+<path fill="currentColor" d="M4 6v22h22v-22h-22zM8 26h-2v-2h2v2zM8 23h-2v-2h2v2zM8 20h-2v-2h2v2zM8 16h-2v-2h2v2zM8 13h-2v-2h2v2zM8 10h-2v-2h2v2zM20 26h-10v-8h10v8zM20 16h-10v-8h10v8zM24 26h-2v-2h2v2zM24 23h-2v-2h2v2zM24 20h-2v-2h2v2zM24 16h-2v-2h2v2zM24 13h-2v-2h2v2zM24 10h-2v-2h2v2z"></path>
+</symbol>
 </defs>
 </svg>

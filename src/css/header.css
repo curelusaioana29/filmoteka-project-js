@@ -8,8 +8,6 @@
   --transition: 350ms ease-in-out;
   --title-transition: 500ms ease-in-out;
 }
-
-
 body {
   font-family: Roboto;
   font-weight: 500;
@@ -17,6 +15,7 @@ body {
   max-width: 1280px;
   min-width: 320px;
   margin: 0px auto;
+  background-color: #efefef;
 }
 body::-webkit-scrollbar {
   width: 4px;
@@ -307,9 +306,7 @@ div.arrows ul.arrows a {
   transition: var(--transition);
 }
 div.arrows ul.arrows a:hover {
-  background-color: Uncaught (in promise) TypeError: Cannot set properties of null (setting 'innerHTML')
-  at renderPagination (main.js:166:34)
-  at displayMovies (main.js:160:7);
+  background-color: #0d96fadd;
 }
 div.arrows ul.arrows svg {
   width: 20px;

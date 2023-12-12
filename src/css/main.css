@@ -1,14 +1,12 @@
 div#movieList {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
-
 div#movieList ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-
 div#movieList ul {
   width: 100%;
   margin: 0px;
@@ -18,135 +16,144 @@ div#movieList ul {
   flex-wrap: wrap;
   gap: 40px;
   align-items: center;
-
 }
-
-
 div#movieList li {
-    display: list-item;
-    padding: 0px;
-    margin: 0px;
-    width: 370px;
-    align-items: center;
-    }
-
-div#movieList li {
+  display: list-item;
+  padding: 0px;
+  margin: 0px;
+  width: 370px;
+  align-items: center;
+  background-color: #fff;
   border-radius: 5px;
-      margin-right: 20px;
-      margin-left: 20px;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      width: 280px;
-      transition: .45s cubic-bezier(.4,0,.2,1); 
-      box-shadow: 0px 6px 11px 2px rgba(5, 5, 8, 0.1);;
-
-
-      }
-
+  margin-right: 20px;
+  margin-left: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  width: 280px;
+  transition: 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 6px 11px 2px rgba(5, 5, 8, 0.1);
+  cursor: pointer;
+}
 #movieList li:hover {
-        box-shadow: 0px 0.9px 10px 2px #0d96fadd;
-        transform: scale(1.03);
-        
-      }   
-
+  box-shadow: 0px 0.9px 10px 2px #0d96fadd;
+  transform: scale(1.03);
+}
 div#movieList img {
-    border-radius: 5px 5px 0px 0px;
-    width: 100%;
-    margin-bottom: 2px;
-    object-fit: cover;
-
+  border-radius: 5px 5px 0px 0px;
+  width: 100%;
+  margin-bottom: 2px;
+  object-fit: cover;
 }
-
-
 div#movieList h2 {
-    font-family: Roboto,sans-serif;
-    text-transform: uppercase;
-    font-style: normal;
-    font-size: 15px;
-    letter-spacing: 1.5;
-    margin-top: 0px;
-    margin-left: 11px;
-    margin-bottom: 0px;
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 1.5;
+  margin-top: 0px;
+  margin-left: 11px;
+  margin-bottom: 0px;
 }
-
 div#movieList span1 {
-   display: inline-flex;
-    flex-wrap: wrap;
-    font-family: Roboto,sans-serif;
-    font-style: normal;
-    font-size: 12px;
-    line-height: 1.1;
-    color: #0d96fadd;
-    padding-top: 0px;
-    padding-right: 3px;
-    margin-left: 11px;
-    margin-top: 0px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 1.1;
+  color: #0d96fadd;
+  padding-top: 0px;
+  padding-right: 3px;
+  margin-left: 11px;
+  margin-top: 0px;
 }
-
 div#movieList span2 {
-    font-family: Roboto,sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.1;
-    letter-spacing: normal;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 16px;
-    border-radius: 5px;
-    background-color:#0d96fadd;
-    color: #fff;
-    padding-top: 1px;
-    padding-right: 5px;
-    padding-left: 5px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.1;
+  letter-spacing: normal;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 16px;
+  border-radius: 5px;
+  background-color: #0d96fadd;
+  color: #fff;
+  padding-top: 1px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
-
 div#movieList span3 {
-        display: inline-flex;
-    flex-wrap: wrap;
-    font-family: Roboto,sans-serif;
-    font-style: normal;
-    font-size: 12px;
-    line-height: 1.1;
-    color: #0d96fadd;
-    padding-top: 0px;
-    padding-right: 3px;
-    margin-left: 5px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 1.1;
+  color: #0d96fadd;
+  padding-top: 0px;
+  padding-right: 3px;
+  margin-left: 5px;
 }
-
-
-
-
 body {
-  font-family: Arial, sans-serif; 
+  font-family: Arial, sans-serif;
 }
-
 .search-movie {
   margin-bottom: 20px;
 }
-
 form {
   display: flex;
 }
-
 input {
   flex: 1;
   padding: 8px;
   margin-right: 8px;
 }
-
 button {
   padding: 8px;
 }
-
 #movieList {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
-
-
+/* Pagination */
+div#pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 45px 0px;
+}
+div#pagination button {
+  cursor: pointer;
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  font-weight: 700;
+  font-size: 10px;
+  background-color: #fff;
+  transition: 500ms ease-in-out;
+  box-shadow: 0px 0px 5px 0px #0d96fadd;
+}
+div#pagination button:hover {
+  background-color: #0d96fadd;
+  color: #fff;
+  box-shadow: 0px 0px 5px 0px #111;
+  transform: scale(1.15);
+}
+div#pagination button.active {
+  background-color: #0d96fadd;
+  color: #fff;
+  box-shadow: 0px 0px 5px 0px #111;
+  transform: scale(1.09);
+}
 /********** Tablet ( 480px - 768px ) **********/
 @media screen and (min-width: 480px) {
   div#movieList ul {
@@ -154,25 +161,29 @@ button {
     flex-wrap: wrap;
     gap: 30px;
     margin-bottom: 50px;
+  }
+  div#movieList li {
+    margin-bottom: 0;
+    width: 294px;
+  }
+  /* Pagination */
+  div#pagination {
+    gap: 15px;
+  }
+  div#pagination button {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
 }
-
-div#movieList li {
-  margin-bottom: 0;
-  width: 294px;
-}
-           }
-
-
-
 /********** Desktop ( 768px - 1200px ) **********/
 @media screen and (min-width: 768px) {
   div#movieList ul {
     margin: 0;
     padding: 0;
     list-style: none;
-}
-
-div#movieList ul {
+  }
+  div#movieList ul {
     width: 100%;
     margin: 0px;
     padding: 0px;
@@ -181,8 +192,5 @@ div#movieList ul {
     flex-wrap: wrap;
     gap: 40px;
     align-items: center;
-
-}
-
-  
+  }
 }

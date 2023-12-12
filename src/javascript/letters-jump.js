@@ -1,3 +1,4 @@
+// Header Letters Jump
 export function initializeLettersJump() {
   let letterList = document.querySelectorAll('.play-title');
 
