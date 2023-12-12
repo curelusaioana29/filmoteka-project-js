@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 import refs from './refs.js';
 import clearList from './clear-movie-list.js';
+=======
+import refs from './refs';
+// import clearList from './clear-movie-list';
+>>>>>>> Stashed changes
 
 
 export default function onLibraryListClick(event) {

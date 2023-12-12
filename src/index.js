@@ -37,3 +37,4 @@ refs.watchedBtn.addEventListener('click', fnHendler.onClickWatched);
 refs.queueBtn.addEventListener('click', fnHendler.onClickQueue);
 // refs.logoNav.addEventListener('click', fnHendler.onClickLogoHome);
 refs.homeHeaderBtn.addEventListener('click', fnHendler.onClickLogoHome);
+

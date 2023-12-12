@@ -39,6 +39,8 @@ const refs = {
 
     siteNavButtons: document.querySelector('.anchors'),
     // logoNav: document.querySelector('.logo-container'),
+
+    
     libraryList: document.querySelector('.user-list'),
     searchForm: document.querySelector('.search-movie'),
     homeHeaderBtn: document.querySelector('.js-home'),
