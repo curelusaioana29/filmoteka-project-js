@@ -52,6 +52,7 @@ const refs = {
     messageLibRef: document.querySelector('.films__message'),
     clearBtn: document.querySelector('[data-request="clear"]'),
     clearBtnContainer: document.querySelector('.library__delete'),
+    pop: document.querySelectorAll('.pop'),
 };
 
 export default refs;

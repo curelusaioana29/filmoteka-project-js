@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const totalPages = Math.ceil(totalMovies / moviesPerPage);
     paginationContainer.innerHTML = '';
 
-    const visiblePages = 7; // Adjust this number based on your preference
+    const visiblePages = 5; // Adjust this number based on your preference
     const sideButtons = Math.floor(visiblePages / 2);
 
     let startPage = currentPage - sideButtons;
