@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< Updated upstream
     <title>Page title</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/modern-normalize@2.0.0/modern-normalize.css">
@@ -12,5 +13,43 @@
   <body>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <!-- <include src="./partials/example.html"></include> -->
+=======
+    <title>Filmoteka</title>
+    <link rel="website icon" type="svg" href="./images/filmoteka-logo.svg" />
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles CSS -->
+    <link
+      rel="stylesheet"
+      href="../node_modules/notiflix/dist/notiflix-3.2.6.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/simplelightbox/dist/simple-lightbox.min.css"
+    />
+    <link rel="stylesheet" href="./css/modern-normalize.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/pagination.css" />
+    <link rel="stylesheet" href="./css/spinner.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+  </head>
+  <body>
+    <!-- HTML -->
+    <include src="./partials/header.html"></include>
+    <include src="./partials/main.html"></include>
+    <include src="./partials/spinner.html"></include>
+    <include src="./partials/footer.html"></include>
+    <!-- JavaScript -->
+    <script src="../node_modules/notiflix/dist/notiflix-3.2.6.min.js"></script>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+     <script type="module" src="./index.js"></script>
+     <script src="./javascript/modal.js"></script>
+>>>>>>> Stashed changes
   </body>
 </html>
