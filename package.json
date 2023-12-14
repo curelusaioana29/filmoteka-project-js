@@ -1,7 +1,7 @@
 {
   "name": "filmoteka-project",
   "version": "2.0.0",
-  "main": "index.js",
+  
   "description": "Цей проект створено за допомогою Parcel. Для ознайомлення та налаштування \r додаткових можливостей, [зверніться до документації](https://parceljs.org/).",
   "homepage": "https://github.com/curelusaioana29/filmoteka-project-js/",
   "scripts": {
