@@ -1,5 +1,5 @@
-import refs from './refs';
-import { load } from './storage';
+import refs from './refs.js';
+import { load } from './storage.js';
 
 export default {
   messageClose() {

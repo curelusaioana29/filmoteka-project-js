@@ -1,11 +1,11 @@
 {
-  "name": "filmoteka-project-js",
+  "name": "filmoteka-project",
   "version": "2.0.0",
-  "description": "",
-  "homepage": "https://github.com/curelusaioana29/filmoteka-project-js/",
+  "description": "Цей проект створено за допомогою Parcel. Для ознайомлення та налаштування \r додаткових можливостей, [зверніться до документації](https://parceljs.org/).",
+  "homepage": "https://curelusaioana29.github.io/filmoteka-project-js/",
   "scripts": {
-    "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /filmoteka-project-js/"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url /filmoteka-project-js/"
   },
   "repository": {
     "type": "git",
@@ -18,16 +18,23 @@
     "url": "https://github.com/curelusaioana29/filmoteka-project-js/issues"
   },
   "dependencies": {
+    "@swc/helpers": "^0.5.3",
     "axios": "^1.6.2",
+    "core-js": "^3.34.0",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.6",
+    "regenerator-runtime": "^0.14.0",
     "simplelightbox": "^2.14.2"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
-    "posthtml-include": "^1.7.4"
+    "posthtml-include": "^1.7.4",
+    "web": "^0.0.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
+
 }
