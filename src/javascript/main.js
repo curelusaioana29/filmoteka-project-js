@@ -24,6 +24,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   let currentPage = 1;
   let currentPageButton;
 
+  const movieModal = document.getElementById('movieModal');
+  const closeMovieModalBtn = document.getElementById('closeMovieModal');
+
+  closeMovieModalBtn.addEventListener('click', () => {
+    movieModal.style.display = 'none';
+  });
+
+  
+
   async function displayMovies(movies) {
     movieListContainer.innerHTML = '';
 
@@ -52,6 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           image.alt = `${movie.title} Poster`;
           title.textContent = movie.title;
           genre.textContent = `${details.genres
+            .slice(0, 3) // Take the first three genres
             .map(genre => genre.name)
             .join(', ')}`;
 
@@ -67,6 +77,12 @@ document.addEventListener('DOMContentLoaded', async () => {
           cardLi.appendChild(airDate);
           cardLi.appendChild(voteAverage);
           movieUl.appendChild(cardLi);
+          // Add click event on movie card to display details in modal
+          cardLi.addEventListener('click', async () => {
+            displayMovieDetails(details);
+          });
+
+          movieUl.appendChild(cardLi);
         }
       }
 
@@ -75,11 +91,54 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
+  async function displayMovieDetails(details) {
+    const modalDetails = document.getElementById('modalDetails');
+    modalDetails.innerHTML = '';
+    const detailsContainer = document.createElement('div');
+    detailsContainer.style.display = 'flex';
+    const leftSection = document.createElement('div');
+    leftSection.style.marginRight = '20px'; 
+    const posterImage = document.createElement('img');
+    posterImage.src = `${imageBaseURL}${details.poster_path}`;
+    posterImage.alt = `${details.title} Poster`;
+    posterImage.style.width = '150px'; 
+    posterImage.style.height = '250px'; 
+    leftSection.appendChild(posterImage);
+    const rightSection = document.createElement('div');
+    const titleElement = document.createElement('h2');
+    titleElement.textContent = details.title;
+    rightSection.appendChild(titleElement);
+    const overviewElement = document.createElement('p');
+    overviewElement.textContent = details.overview;
+    rightSection.appendChild(overviewElement);
+    const releaseDateElement = document.createElement('p');
+    releaseDateElement.innerHTML = `<strong>Release Date:</strong> ${details.release_date}`;
+    rightSection.appendChild(releaseDateElement);
+    const genresElement = document.createElement('p');
+    genresElement.innerHTML = `<strong>Genres:</strong> ${details.genres.map(genre => genre.name).join(', ')}`;
+    rightSection.appendChild(genresElement);
+    const runtimeElement = document.createElement('p');
+    runtimeElement.innerHTML = `<strong>Runtime:</strong> ${details.runtime} minutes`;
+    rightSection.appendChild(runtimeElement);
+    const voteAverageElement = document.createElement('p');
+    voteAverageElement.innerHTML = `<strong>Vote Average:</strong> ${details.vote_average}`;
+    rightSection.appendChild(voteAverageElement);
+    const taglineElement = document.createElement('p');
+    taglineElement.innerHTML = `<strong>Tagline:</strong> ${details.tagline || 'Not available'}`;
+    rightSection.appendChild(taglineElement);
+  
+    detailsContainer.appendChild(leftSection);
+    detailsContainer.appendChild(rightSection);
+    modalDetails.appendChild(detailsContainer);
+  
+    movieModal.style.display = 'block';
+  }
+
   function renderPagination(totalMovies) {
     const totalPages = Math.ceil(totalMovies / moviesPerPage);
     paginationContainer.innerHTML = '';
 
-    const visiblePages = 7; // Adjust this number based on your preference
+    const visiblePages = 5; // Adjust this number based on your preference
     const sideButtons = Math.floor(visiblePages / 2);
 
     let startPage = currentPage - sideButtons;
@@ -175,7 +234,46 @@ document.addEventListener('DOMContentLoaded', async () => {
     performSearch(searchInput.value.trim());
   });
 
-  searchInput.addEventListener('input', () => performSearch(searchInput.value.trim()));
+  let searchTimeout;
+  const debounceDelay = 0;
+
+  async function performSearch(searchQuery, page = 1) {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(async () => {
+      currentPage = page;
+      const totalMovies = 900; // Set the total number of movies you want to display
+      const totalPages = Math.ceil(totalMovies / moviesPerPage);
+
+      const movies = [];
+      const fetchPromises = [];
+
+      for (let p = 1; p <= totalPages; p++) {
+        const url = searchQuery.trim() === ''
+          ? `${trendingMoviesEndpoint}?api_key=${apiKey}&page=${p}`
+          : `${searchMoviesEndpoint}?api_key=${apiKey}&query=${searchQuery}&page=${p}`;
+
+        fetchPromises.push(fetchMovies(url));
+      }
+
+      const results = await Promise.all(fetchPromises);
+
+      results.forEach(result => {
+        if (result.results) {
+          movies.push(...result.results);
+        }
+      });
+
+      displayMovies(movies);
+
+      // Reset 'active' class on buttons
+      if (currentPageButton) {
+        currentPageButton.classList.remove('active');
+      }
+
+      renderPagination(movies.length);
+    }, debounceDelay);
+  }
+
 
   await performSearch('', currentPage);
 });
