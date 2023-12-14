@@ -5,8 +5,8 @@
   "description": "Цей проект створено за допомогою Parcel. Для ознайомлення та налаштування \r додаткових можливостей, [зверніться до документації](https://parceljs.org/).",
   "homepage": "https://github.com/curelusaioana29/filmoteka-project-js/",
   "scripts": {
-    "build": "webpack"
-  
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /filmoteka-project-js/"
   },
   "repository": {
     "type": "git",
@@ -37,4 +37,5 @@
     "webpack-cli": "^5.1.4"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
+  
 }
