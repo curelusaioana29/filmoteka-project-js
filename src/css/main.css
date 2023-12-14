@@ -375,3 +375,51 @@ div#pagination button.active {
 @media screen and (min-width: 480px) {
   .pops--invers .pop {width: 40px;
 }   }
+
+/* Styles for modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(34, 124, 235);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-list {
+  list-style-type: none;
+}
+
+.modal__btn--watched:hover {
+  background-color:#0d96fadd;
+}
+
+.modal__btn--queue:hover {
+  background-color:#0d96fadd;
+
+}
