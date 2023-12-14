@@ -36,5 +36,5 @@
     "webpack-cli": "^5.1.4"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
-  "main": "index.js"
+  "main": "./index.js"
 }
