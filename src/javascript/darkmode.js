@@ -7,8 +7,8 @@ export function initializeDarkModeToggle() {
   let darkModeOn = function () {
     if (BUTTON_DARK_MODE.classList.contains('active')) {
       svgDarkModeChild.setAttribute(
-        'href',
-        './images/filmoteka-icons.svg#icon-dark-mode'
+        "href",
+        "/filmoteka-project-js/filmoteka-icons.12e6e143.svg#icon-dark-mode"
       );
 
       BUTTON_DARK_MODE.classList.remove('active');
@@ -16,8 +16,8 @@ export function initializeDarkModeToggle() {
       bodyStyle.setAttribute('style', 'background-color: #000000dd');
     } else {
       svgDarkModeChild.setAttribute(
-        'href',
-        './images/filmoteka-icons.svg#icon-light-mode'
+        "href",
+        "/filmoteka-project-js/filmoteka-icons.12e6e143.svg#icon-light-mode"
       );
 
       BUTTON_DARK_MODE.classList.add('active');
