@@ -20,6 +20,6 @@ export function initializeLettersJump() {
 
   setInterval(function () {
     jumpLetters();
-  }, 60000); // Change the time for Letters Jump
+  }, 10000); // Change the time for Letters Jump
 }
 initializeLettersJump();
