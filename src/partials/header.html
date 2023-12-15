@@ -1,53 +1,29 @@
-<!-- Header -->
 <header id="header-bkg">
+  <!-- Background -->
   <ul class="background-list">
     <li class="background-one displayed"></li>
     <li class="background-two"></li>
     <li class="background-three"></li>
   </ul>
-  <div class="header-container container header-container--home">
-    <!-- Anchors -->
-    <ul class="anchors">
-      <li class="site-nav__item">
-        <button class="home js-home" data-request="home" aria-label="home">
-          HOME
-        </button>
-      </li>
-      <li class="site-nav__item">
-        <button
-          class="library js-library"
-          data-request="library"
-          aria-label="my library"
-        >
-          MY LIBRARY
-        </button>
-      </li>
-      <li>
-        <!-- Darkmode Button -->
-        <button class="dark-mode active">
-          <svg class="dark-mode">
-            <use
-              class="dark-mode"
-              href="./images/filmoteka-icons.svg#icon-light-mode"
-            ></use>
-          </svg>
-        </button>
-      </li>
-    </ul>
-    <!-- Form -->
-    <form class="search-movie">
-      <input
-        type="text"
-        name="searchQuery"
-        autocomplete="on"
-        placeholder="Movie Search"
-      />
-      <button class="search" type="submit">
-        <svg>
-          <use href="./images/filmoteka-icons.svg#search-icon"></use>
+  <!-- Header Layout -->
+  <div class="header-edges">
+    <!-- Navigation / Darkmode -->
+    <div class="navigation">
+      <!-- Navigation -->
+      <button class="home" data-request="home" aria-label="home">HOME</button>
+      <button class="library" data-request="library" aria-label="my library">
+        MY LIBRARY
+      </button>
+      <!-- Darkmode Button -->
+      <button class="dark-mode active">
+        <svg class="dark-mode">
+          <use
+            class="dark-mode"
+            href="./images/filmoteka-icons.svg#icon-light-mode"
+          ></use>
         </svg>
       </button>
-    </form>
+    </div>
     <!-- Title Container -->
     <div class="title-container">
       <!-- Icon Logo -->
@@ -67,48 +43,58 @@
         <li><a class="play-title" href="./index.html">A</a></li>
       </ul>
     </div>
-    <!-- User List -->
-    <div class="user-list">
-      <ul class="user-list">
-        <li class="library__item">
-          <button
-            class="watched button--library"
-            data-request="watched"
-            aria-label="watched"
-          >
+    <!-- UI -->
+    <div class="header-container">
+      <!-- Form -->
+      <div class="form hidden">
+        <form class="search-movie">
+          <input
+            type="text"
+            name="searchQuery"
+            autocomplete="on"
+            placeholder="Movie Search"
+          />
+          <button class="search" type="submit">
+            <svg>
+              <use href="./images/filmoteka-icons.svg#search-icon"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
+      <!-- User List -->
+      <div class="user-list ">
+        <div class="user-option">
+          <button class="watched" data-request="watched" aria-label="watched">
             WATCHED
           </button>
-        </li>
-        <li class="library__item">
-          <button class="queue button--library is-active" data-request="queue" aria-label="queue">QUEUE</button>
-        </li>
-      </ul>
-      <button
-        class="clear-wathed-list button--library library__item--button"
-        data-request="clear"
-      >
-        CLEAR WATCHED LIST
-      </button>
-      <button class="clear-queue-list">CLEAR QUEUE LIST</button>
+          <button class="queue" data-request="queue" aria-label="queue">
+            QUEUE
+          </button>
+        </div>
+        <button class="clear-wathed-list" data-request="clear">
+          CLEAR WATCHED LIST
+        </button>
+        <button class="clear-queue-list hidden">CLEAR QUEUE LIST</button>
+      </div>
     </div>
   </div>
+  <!-- Scroll Arrows -->
+  <div class="scroll-arrows">
+    <ul class="arrows">
+      <li>
+        <a href="#top">
+          <svg>
+            <use href="./images/filmoteka-icons.svg#icon-arrow-up"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#bottom">
+          <svg class="bottom">
+            <use href="./images/filmoteka-icons.svg#icon-arrow-up"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
 </header>
-<!-- Arrows -->
-<div class="arrows">
-  <ul class="arrows">
-    <li>
-      <a href="#top">
-        <svg>
-          <use href="./images/filmoteka-icons.svg#icon-arrow-up"></use>
-        </svg>
-      </a>
-    </li>
-    <li>
-      <a href="#bottom">
-        <svg class="bottom">
-          <use href="./images/filmoteka-icons.svg#icon-arrow-up"></use>
-        </svg>
-      </a>
-    </li>
-  </ul>
-</div>
