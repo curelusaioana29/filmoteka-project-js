@@ -107,7 +107,7 @@ body {
 form {
   display: flex;
 }
-input {
+div#movieList input {
   flex: 1;
   padding: 8px;
   margin-right: 8px;
