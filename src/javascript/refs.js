@@ -1,5 +1,5 @@
 const refs = {
-    headerNavContainer: document.querySelector('.header-container'),
+    // headerNavContainer: document.querySelector('.header-container'),
     // paginationBox: document.querySelector('.pagination'),
     // paginationList: document.querySelector('.pagination__list'),
     // filmListRef: document.querySelector('.films__list'),
@@ -27,7 +27,7 @@ const refs = {
 
     
 
-    pageLibraryRef: () => document.querySelector('[data-request="library"]'),
+    // pageLibraryRef: () => document.querySelector('[data-request="library"]'),
 
     
     // divLightbox: document.querySelector('.lightbox'),
@@ -37,23 +37,23 @@ const refs = {
 
     
 
-    siteNavButtons: document.querySelector('.anchors'),
+    // siteNavButtons: document.querySelector('.anchors'),
     // logoNav: document.querySelector('.logo-container'),
 
     
-    libraryList: document.querySelector('.user-list'),
-    searchForm: document.querySelector('.search-movie'),
-    homeHeaderBtn: document.querySelector('.js-home'),
-    libraryHeaderBtn: document.querySelector('.js-library'),
-    watchedBtn: document.querySelector('[data-request="watched"]'),
-    queueBtn: document.querySelector('[data-request="queue"]'),
-    headerContainer: document.querySelector('.header-container'),
+    // libraryList: document.querySelector('.user-list'),
+    // searchForm: document.querySelector('.search-movie'),
+    // homeHeaderBtn: document.querySelector('.js-home'),
+    // libraryHeaderBtn: document.querySelector('.js-library'),
+    // watchedBtn: document.querySelector('[data-request="watched"]'),
+    // queueBtn: document.querySelector('[data-request="queue"]'),
+    // headerContainer: document.querySelector('.header-container'),
 
     spinner: document.querySelector('sk-chase'),
     // errorNoteRef: document.querySelector('.header__error'),
     // messageLibRef: document.querySelector('.films__message'),
-    clearBtn: document.querySelector('[data-request="clear"]'),
-    clearBtnContainer: document.querySelector('.library__delete'),
+    // clearBtn: document.querySelector('[data-request="clear"]'),
+    // clearBtnContainer: document.querySelector('.library__delete'),
     pop: document.querySelectorAll('.pop'),
 };
 

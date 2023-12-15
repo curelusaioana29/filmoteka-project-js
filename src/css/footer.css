@@ -1,0 +1,140 @@
+:root {
+  --color: #ffffffdd;
+  --active-colo: #0d96fa;
+  --hover-color: #0d96fa;
+  --backgroun-color: #efefef;
+  --second-backgroun-color: #000000dd;
+  --transition: 350ms ease-in-out;
+  --title-transition: 500ms ease-in-out;
+}
+/* Footer */
+footer#bottom {
+  background-color: #fff;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+/* Footer Container */
+footer#bottom div.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+/* Copy Rights */
+footer#bottom div.footer-container div.coppy-rights {
+  color: #545454;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+/* Developers Team */
+footer#bottom div.footer-container div.developers-team {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+footer#bottom div.footer-container div.developers-team span {
+  color: #545454;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+footer#bottom div.footer-container div.developers-team svg {
+  width: 14px;
+  height: 12.88px;
+  flex-shrink: 0;
+}
+footer#bottom div.footer-container div.developers-team button {
+  color: #545454;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+/* Modal */
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}
+footer#bottom {
+}

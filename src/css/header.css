@@ -35,7 +35,7 @@ header#header-bkg {
   flex-direction: column;
   justify-content: center;
   background-color: transparent;
-  margin: 0px 2px;
+  margin: 0px 2px 50px 2px;
 }
 /* Background */
 header#header-bkg ul.background-list {
@@ -301,7 +301,7 @@ header#header-bkg div.user-list button.hidden {
 }
 /* Scroll Arrows */
 header#header-bkg div.scroll-arrows {
-  position: absolute;
+  position: fixed;
   right: 0px;
   top: 475px;
 }
