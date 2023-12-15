@@ -1,5 +1,5 @@
 {
-  "name": "filmoteka-project-js",
+  "name": "filmoteka-project",
   "version": "2.0.0",
   "description": "",
   "homepage": "https://curelusaioana29.github.io/filmoteka-project-js/",
@@ -30,7 +30,11 @@
     "@parcel/transformer-sass": "^2.6.0",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
-    "posthtml-include": "^1.7.4"
+    "posthtml-include": "^1.7.4",
+    "web": "^0.0.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
+
 }
