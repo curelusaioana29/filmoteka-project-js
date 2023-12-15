@@ -47,9 +47,9 @@ ul {
     margin-bottom: 4px;
 }
 .footer_heart {
-    fill: #B92F2C;
+    fill: #0d96fa;
     vertical-align: auto;
-    color: #B92F2C;
+    color: #0d96fa;
 }
 
 /* MODAL */
@@ -109,8 +109,8 @@ body.is-open {
     justify-content: space-around;
     align-items: center;
     background-color: #fff;
-    box-shadow: 0 3px 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.08), 0 2px 2px rgba(0,0,0,.12);
-    border-radius: 0 0 4px 4px;
+    box-shadow: 0 3px 3px 0px #0000001f;
+    border-radius: 10px;
     margin-top: 10px;
     padding-left: 10px;
 }
@@ -132,8 +132,8 @@ body.is-open {
 .icon_link:hover,
 .icon_link:focus,
 .svg:hover,
-.svgcon_link:focus{
-   fill: #B92F2C;
+.svg:focus{
+   fill: #0d96fa;
    cursor: pointer;
 }
 
@@ -150,7 +150,7 @@ body.is-open {
     margin: 0;
     border: none;
     border-radius: 50%;
-    background-color: #B92F2C;
+    background-color:  #0d96fa;
     fill: #000;
     cursor: pointer;
     outline: none;
@@ -186,7 +186,7 @@ button, select {
 
 .lightbox_img {
     border-radius: 5%;
-    border: 2px solid #B92F2C;
+    border: 2px solid #0d96fa;
 }
 img {
     display: block;
@@ -211,7 +211,7 @@ img {
     padding-left: 10px;
 }
 .comcontent_subtitle {
-    color: #B92F2C;
+    color: #0d96fa;
     padding-left: 10px;
     padding-top: 4px;
 }
