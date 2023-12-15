@@ -1,0 +1,100 @@
+<header id="header-bkg">
+  <!-- Background -->
+  <ul class="background-list">
+    <li class="background-one displayed"></li>
+    <li class="background-two"></li>
+    <li class="background-three"></li>
+  </ul>
+  <!-- Header Layout -->
+  <div class="header-edges">
+    <!-- Navigation / Darkmode -->
+    <div class="navigation">
+      <!-- Navigation -->
+      <button class="home" data-request="home" aria-label="home">HOME</button>
+      <button class="library" data-request="library" aria-label="my library">
+        MY LIBRARY
+      </button>
+      <!-- Darkmode Button -->
+      <button class="dark-mode active">
+        <svg class="dark-mode">
+          <use
+            class="dark-mode"
+            href="./images/filmoteka-icons.svg#icon-light-mode"
+          ></use>
+        </svg>
+      </button>
+    </div>
+    <!-- Title Container -->
+    <div class="title-container">
+      <!-- Icon Logo -->
+      <svg>
+        <use href="./images/filmoteka-icons.svg#icon-film"></use>
+      </svg>
+      <!-- Title List -->
+      <ul>
+        <li><a class="play-title" href="./index.html">F</a></li>
+        <li><a class="play-title" href="./index.html">I</a></li>
+        <li><a class="play-title" href="./index.html">L</a></li>
+        <li><a class="play-title" href="./index.html">M</a></li>
+        <li><a class="play-title" href="./index.html">O</a></li>
+        <li><a class="play-title" href="./index.html">T</a></li>
+        <li><a class="play-title" href="./index.html">E</a></li>
+        <li><a class="play-title" href="./index.html">K</a></li>
+        <li><a class="play-title" href="./index.html">A</a></li>
+      </ul>
+    </div>
+    <!-- UI -->
+    <div class="header-container">
+      <!-- Form -->
+      <div class="form hidden">
+        <form class="search-movie">
+          <input
+            type="text"
+            name="searchQuery"
+            autocomplete="on"
+            placeholder="Movie Search"
+          />
+          <button class="search" type="submit">
+            <svg>
+              <use href="./images/filmoteka-icons.svg#search-icon"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
+      <!-- User List -->
+      <div class="user-list ">
+        <div class="user-option">
+          <button class="watched" data-request="watched" aria-label="watched">
+            WATCHED
+          </button>
+          <button class="queue" data-request="queue" aria-label="queue">
+            QUEUE
+          </button>
+        </div>
+        <button class="clear-wathed-list" data-request="clear">
+          CLEAR WATCHED LIST
+        </button>
+        <button class="clear-queue-list hidden">CLEAR QUEUE LIST</button>
+      </div>
+    </div>
+  </div>
+  <!-- Scroll Arrows -->
+  <div class="scroll-arrows">
+    <ul class="arrows">
+      <li>
+        <a href="#top">
+          <svg>
+            <use href="./images/filmoteka-icons.svg#icon-arrow-up"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#bottom">
+          <svg class="bottom">
+            <use href="./images/filmoteka-icons.svg#icon-arrow-up"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>

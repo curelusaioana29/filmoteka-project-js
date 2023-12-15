@@ -1,0 +1,87 @@
+.pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+  
+  
+.pagination-button:not(:last-child),
+.dots {
+    margin-right: 16px;
+  }
+  
+.pagination-button {
+    padding: 0;
+    background-color: $white-text-color;
+    border: none;
+    color: $primary-text-color;
+    cursor: pointer;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.333;
+     width: 40px;
+     height: 40px;
+     border-radius: 50px
+  }
+
+.pagination-button:hover {
+    box-shadow: 0px 0.9px 10px 2px #0d96fadd;
+    transform: scale(1.03);
+  }
+  
+.pagination--current {
+    width: 40px;
+    height: 40px;
+    background-color: #0d96fadd;
+    color: #fffS;
+    border-radius: 50px;
+  }
+  
+  
+  
+.arrow-left,
+.arrow-right {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: $secondary-background-color;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    stroke: #000;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+.arrow-left {
+    background-image: url(../images/filmoteka-icons.svg#icon-arrow-left);
+  }
+  
+ .arrow-right {
+    background-image: url(../images/filmoteka-icons.svg#icon-arrow-right);
+  }
+
+/* @media screen and (min-width: 330px) and (max-width: 768px) {
+    .pagination-container {
+        padding: 40px 0;
+    }
+
+} */
+
+@media screen and (min-width: 768px) {
+    .pagination-container {
+        padding: 50px 0 60px 0;
+
+    }
+
+}
+
+ 
+@media screen and (max-width: 768px) {
+    .dots,
+    .first-button,
+    .last-button {       display: none;
+
+    }
+
+}

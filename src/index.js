@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 // Import JavaScript Files
 import refs from './javascript/refs.js';
 import './javascript/up-dwn-btn.js';
@@ -41,4 +39,7 @@ refs.queueBtn.addEventListener('click', fnHendler.onClickQueue);
 // refs.logoNav.addEventListener('click', fnHendler.onClickLogoHome);
 refs.homeHeaderBtn.addEventListener('click', fnHendler.onClickLogoHome);
 
->>>>>>> Stashed changes
+import './javascript/main.js';
+import './javascript/notification.js';
+
+// import './javascript/spinner.js';
