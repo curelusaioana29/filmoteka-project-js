@@ -101,8 +101,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const posterImage = document.createElement('img');
     posterImage.src = `${imageBaseURL}${details.poster_path}`;
     posterImage.alt = `${details.title} Poster`;
-    posterImage.style.width = '150px'; 
-    posterImage.style.height = '250px'; 
+    posterImage.style.width = '100%'; 
+    posterImage.style.height = '100%'; 
+    posterImage.style.objectFit = 'cover'; 
+    leftSection.appendChild(posterImage);
     leftSection.appendChild(posterImage);
     const rightSection = document.createElement('div');
     const titleElement = document.createElement('h2');
@@ -111,18 +113,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     const overviewElement = document.createElement('p');
     overviewElement.textContent = details.overview;
     rightSection.appendChild(overviewElement);
+    const voteAverageElement = document.createElement('p');
+    const voteAverageText = document.createElement('span');
+    voteAverageText.innerHTML = details.vote_average;
+    voteAverageElement.innerHTML = `<strong>Vote Average:</strong> `;
+    voteAverageElement.appendChild(voteAverageText);
+    voteAverageText.classList.add('vote-average-text');
+    rightSection.appendChild(voteAverageElement);
     const releaseDateElement = document.createElement('p');
     releaseDateElement.innerHTML = `<strong>Release Date:</strong> ${details.release_date}`;
     rightSection.appendChild(releaseDateElement);
     const genresElement = document.createElement('p');
-    genresElement.innerHTML = `<strong>Genres:</strong> ${details.genres.map(genre => genre.name).join(', ')}`;
+    const genresText = details.genres.map(genre => genre.name).join('<span class="slash"> | </span>');
+    genresElement.innerHTML = `<strong>Genres:</strong> ${genresText}`;
     rightSection.appendChild(genresElement);
     const runtimeElement = document.createElement('p');
     runtimeElement.innerHTML = `<strong>Runtime:</strong> ${details.runtime} minutes`;
     rightSection.appendChild(runtimeElement);
-    const voteAverageElement = document.createElement('p');
-    voteAverageElement.innerHTML = `<strong>Vote Average:</strong> ${details.vote_average}`;
-    rightSection.appendChild(voteAverageElement);
     const taglineElement = document.createElement('p');
     taglineElement.innerHTML = `<strong>Tagline:</strong> ${details.tagline || 'Not available'}`;
     rightSection.appendChild(taglineElement);
@@ -138,7 +145,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const totalPages = Math.ceil(totalMovies / moviesPerPage);
     paginationContainer.innerHTML = '';
 
-    const visiblePages = 5; // Adjust this number based on your preference
+    const visiblePages = 5; 
     const sideButtons = Math.floor(visiblePages / 2);
 
     let startPage = currentPage - sideButtons;
@@ -171,7 +178,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       if (i === currentPage) {
         currentPageButton = pageButton;
-        currentPageButton.classList.add('active'); // Add the 'active' class to the current page button
+        currentPageButton.classList.add('active');
       }
     }
 
@@ -196,7 +203,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   async function performSearch(searchQuery, page = 1) {
     currentPage = page;
-    const totalMovies = 900; // Set the total number of movies you want to display
+    const totalMovies = 900; 
     const moviesPerPage = 9;
     const totalPages = Math.ceil(totalMovies / moviesPerPage);
 
@@ -213,7 +220,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         movies.push(...results.results);
       }
 
-      // If you already have enough movies, break out of the loop
+
       if (movies.length >= totalMovies) {
         break;
       }
@@ -221,7 +228,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     displayMovies(movies);
 
-    // Reset 'active' class on buttons
+
     if (currentPageButton) {
       currentPageButton.classList.remove('active');
     }
@@ -241,7 +248,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(async () => {
       currentPage = page;
-      const totalMovies = 900; // Set the total number of movies you want to display
+      const totalMovies = 900; 
       const totalPages = Math.ceil(totalMovies / moviesPerPage);
 
       const movies = [];
@@ -265,7 +272,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       displayMovies(movies);
 
-      // Reset 'active' class on buttons
+
       if (currentPageButton) {
         currentPageButton.classList.remove('active');
       }
