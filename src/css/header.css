@@ -1,6 +1,6 @@
 :root {
   --color: #fff;
-  --second-color: #000;
+  --second-color: #000; 
   --active-colo: #ffffff44;
   --hover-color: #ffffff44;
   --backgroun-color: #fff;
@@ -105,20 +105,16 @@ header ul.anchors button.library {
   cursor: pointer;
   border: none;
 }
-header ul.anchors button.home {
-  color: var(--color);
-  background: #000000dd;
-}
-header ul.anchors button.home:hover {
+header ul.anchors button.home{
   color: var(--second-color);
-  background-color: #00000011;
-  box-shadow: 1px 1px 10px 2px var(--second-color);
-  font-weight: 900;
+  background: #ffffffdd;
 }
+
 header ul.anchors button.library {
   color: var(--second-color);
   background: #ffffffdd;
 }
+
 /* Darkmode */
 header ul.anchors button.dark-mode {
   display: flex;
@@ -145,6 +141,7 @@ header ul.anchors button.dark-mode svg {
 header ul.anchors button.dark-mode:hover svg {
   color: var(--color);
 }
+header ul.anchors button.home:hover,
 header ul.anchors button.library:hover,
 header form.search-movie input:hover,
 header form.search-movie input:focus,

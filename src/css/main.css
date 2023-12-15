@@ -377,6 +377,7 @@ div#pagination button.active {
 }   }
 
 /* Styles for modal */
+
 .modal {
   display: none;
   position: fixed;
@@ -397,6 +398,7 @@ div#pagination button.active {
   border-radius: 20px;
 }
 
+
 .close {
   color: #aaa;
   float: right;
@@ -412,14 +414,31 @@ div#pagination button.active {
 }
 
 .button-list {
-  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.modal__btn--watched:hover {
-  background-color:#0d96fadd;
+.modal__btn--watched,
+.modal__btn--queue {
+  margin-right: 10px;
+  color: #B92F2C;
+  background: #fff;
+  border: 1px solid #000;
+  font-weight: 900;
+  line-height: 1.33;
+  text-transform: uppercase;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 0.25s;
+  width: 157px;
+  height: 40px;
+  font-size: 11px;
 }
 
+.modal__btn--watched:hover,
 .modal__btn--queue:hover {
-  background-color:#0d96fadd;
-
+  background-color: #B92F2C;
+  color: #fff; /* Setează culoarea textului pe alb când hover */
 }
+
