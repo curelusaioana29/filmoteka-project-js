@@ -412,14 +412,58 @@ div#pagination button.active {
 }
 
 .button-list {
+  height: 44px;
+  display: flex;
+  justify-content: center;
   list-style-type: none;
+  gap: 20px;
+  border-radius: 5px;
+    padding: 0 8px;
+    color: #fff;
+    border: 1px solid #fff;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 255ms ease;
 }
+
+
+
 
 .modal__btn--watched:hover {
   background-color:#0d96fadd;
+  color: #fff;
+
 }
 
 .modal__btn--queue:hover {
   background-color:#0d96fadd;
 
+}
+
+
+.vote-average-text {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.1;
+  letter-spacing: normal;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 16px;
+  border-radius: 5px;
+  background-color: #0d96fadd;
+  color: #fff;
+  padding-top: 1px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.slash {
+  color: #0d96fadd; 
 }
