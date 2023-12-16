@@ -82,7 +82,7 @@ footer#bottom div.team-modal-window {
   position: relative;
   padding: 15px;
   border-radius: 10px;
-  background-color: #ffffffdd;
+  background-color: #ffffffee;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -142,12 +142,14 @@ footer#bottom div.team-modal-window ul li {
   gap: 10px;
   width: 250px;
   transition: var(--transition);
+  width: 100%;
+  overflow: hidden;
 }
 footer#bottom div.team-modal-window ul li:hover {
   border: 2px solid var(--hover-color);
 }
 footer#bottom div.team-modal-window li img {
-  width: 80px;
+  width: 83px;
   border-radius: 15px 0px 0px 15px;
 }
 footer#bottom div.team-modal-window li div.status {
@@ -204,4 +206,35 @@ footer#bottom div.team-modal-window div.status div svg {
 }
 footer#bottom div.team-modal-window div.status div a:hover svg {
   color: var(--hover-color);
+}
+/********** Tablet ( 480px - 768px ) **********/
+@media screen and (min-width: 480px) {
+  /* Footer Container */
+  footer#bottom div.footer-container {
+    flex-direction: row;
+    gap: 5px;
+  }
+  /* Modal */
+  footer#bottom div.team-modal-window {
+    width: 700px;
+  }
+  footer#bottom div.team-modal-window h4 {
+    font-size: 25px;
+  }
+  footer#bottom div.team-modal-window ul li {
+    width: 300px;
+    gap: 20px;
+  }
+  footer#bottom div.team-modal-window li img {
+    width: 100px;
+  }
+  footer#bottom div.team-modal-window li div.status {
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+  }
+  footer#bottom div.team-modal-window div.status span.position {
+    font-size: 12px;
+    font-weight: 600;
+  }
 }
