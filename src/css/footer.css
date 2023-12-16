@@ -110,6 +110,8 @@ footer#bottom div.team-modal-window button.close-team-modal:hover {
   border: 1px solid var(--hover-color);
 }
 footer#bottom div.team-modal-window button.close-team-modal svg {
+  width: 18px;
+  height: 18px;
   color: #000;
   transition: var(--transition);
 }
