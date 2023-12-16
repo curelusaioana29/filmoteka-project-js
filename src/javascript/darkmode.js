@@ -3,39 +3,54 @@ export function initializeDarkModeToggle() {
   let svgDarkModeChild = document.getElementsByClassName('dark-mode')[2];
   const bodyStyle = document.getElementsByTagName("body")[0];
 
-  // Load dark mode setting from local storage
-  const isDarkModeOn = localStorage.getItem('darkMode') === 'true';
+  // Function to set dark mode
+  let setDarkMode = function () {
+    svgDarkModeChild.setAttribute(
+      "href",
+      "/filmoteka-project-js/filmoteka-icons.f7e9ceb7.svg#icon-dark-mode"
+    );
 
-  let darkModeOn = function () {
-    if (BUTTON_DARK_MODE.classList.contains('active')) {
-      svgDarkModeChild.setAttribute(
-        "href",
-        "/filmoteka-project-js/filmoteka-icons.f7e9ceb7.svg#icon-dark-mode"
-      );
+    BUTTON_DARK_MODE.classList.remove('active');
 
-      BUTTON_DARK_MODE.classList.remove('active');
+    bodyStyle.setAttribute('style', 'background-color: #000000dd');
 
-      bodyStyle.setAttribute('style', 'background-color: #000000dd');
-    } else {
-      svgDarkModeChild.setAttribute(
-        "href",
-        "/filmoteka-project-js/filmoteka-icons.f7e9ceb7.svg#icon-light-mode"
-      );
-
-      BUTTON_DARK_MODE.classList.add('active');
-
-      bodyStyle.setAttribute('style', 'background-color: #ffffffdd');
-    }
-
-    // Save dark mode setting to local storage
-    localStorage.setItem('darkMode', BUTTON_DARK_MODE.classList.contains('active'));
+    // Save user preference in localStorage
+    localStorage.setItem('darkMode', 'on');
   };
 
-  // Set initial dark mode based on the stored setting
-  if (isDarkModeOn) {
-    darkModeOn();
+  // Function to set light mode
+  let setLightMode = function () {
+    svgDarkModeChild.setAttribute(
+      "href",
+      "/filmoteka-project-js/filmoteka-icons.f7e9ceb7.svg#icon-light-mode"
+    );
+
+    BUTTON_DARK_MODE.classList.add('active');
+
+    bodyStyle.setAttribute('style', 'background-color: #ffffffdd');
+
+    // Save user preference in localStorage
+    localStorage.setItem('darkMode', 'off');
+  };
+
+  // Function to toggle dark/light mode
+  let toggleDarkMode = function () {
+    if (BUTTON_DARK_MODE.classList.contains('active')) {
+      setDarkMode();
+    } else {
+      setLightMode();
+    }
+  };
+
+  // Check user preference from localStorage on page load
+  const savedDarkMode = localStorage.getItem('darkMode');
+  if (savedDarkMode === 'on') {
+    setDarkMode();
+  } else {
+    setLightMode();
   }
 
-  BUTTON_DARK_MODE.onclick = darkModeOn;
+  // Event listener for dark mode toggle button
+  BUTTON_DARK_MODE.onclick = toggleDarkMode;
 }
 initializeDarkModeToggle();
