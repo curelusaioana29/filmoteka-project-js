@@ -448,7 +448,7 @@ header#header-bkg ul.arrows svg.bottom {
   header#header-bkg div.title-container svg {
     width: 59px;
     height: 59px;
-    stroke: #fff;
+    stroke: #000;
   }
   /* Title List */
   header#header-bkg div.title-container a {
