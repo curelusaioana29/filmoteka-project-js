@@ -46,7 +46,7 @@
     <!-- UI -->
     <div class="header-container">
       <!-- Form -->
-      <div class="form hidden">
+      <div class="form ">
         <form class="search-movie">
           <input
             type="text"
@@ -62,7 +62,7 @@
         </form>
       </div>
       <!-- User List -->
-      <div class="user-list ">
+      <div class="user-list hidden">
         <div class="user-option">
           <button class="watched" data-request="watched" aria-label="watched">
             WATCHED
@@ -82,15 +82,15 @@
   <div class="scroll-arrows">
     <ul class="arrows">
       <li>
-        <a href="#top">
-          <svg>
+        <a id="arrow-link" href="#top">
+          <svg id="arrow-svg">
             <use href="./images/filmoteka-icons.svg#icon-arrow-up"></use>
           </svg>
         </a>
       </li>
       <li>
-        <a href="#bottom">
-          <svg class="bottom">
+        <a id="arrow-link" href="#bottom">
+          <svg id="arrow-svg" class="bottom">
             <use href="./images/filmoteka-icons.svg#icon-arrow-up"></use>
           </svg>
         </a>
