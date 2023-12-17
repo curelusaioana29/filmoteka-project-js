@@ -1,8 +1,3 @@
-/** Load Movies From ApiKey
- * Search Movie From ApiKey
- * Movie Servicies
- * Pagination
- */
 import {
   fetchMovies,
   apiKey,
@@ -29,6 +24,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   closeMovieModalBtn.addEventListener('click', () => {
     movieModal.style.display = 'none';
+  });
+
+  searchInput.addEventListener('input', async () => {
+    const searchQuery = searchInput.value.trim();
+    await performSearch(searchQuery);
+  });
+
+  searchForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const searchQuery = searchInput.value.trim();
+    await performSearch(searchQuery);
   });
 
   async function displayMovies(movies) {
@@ -75,6 +81,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           cardLi.appendChild(airDate);
           cardLi.appendChild(voteAverage);
           movieUl.appendChild(cardLi);
+
           // Add click event on movie card to display details in modal
           cardLi.addEventListener('click', async () => {
             displayMovieDetails(details);
@@ -95,13 +102,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const detailsContainer = document.createElement('div');
     detailsContainer.style.display = 'flex';
     const leftSection = document.createElement('div');
-    leftSection.style.marginRight = '20px'; 
+    leftSection.style.marginRight = '20px';
     const posterImage = document.createElement('img');
     posterImage.src = `${imageBaseURL}${details.poster_path}`;
     posterImage.alt = `${details.title} Poster`;
-    posterImage.style.width = '100%'; 
-    posterImage.style.height = '100%'; 
-    posterImage.style.objectFit = 'cover'; 
+    posterImage.style.width = '100%';
+    posterImage.style.height = '100%';
+    posterImage.style.objectFit = 'cover';
     const rightSection = document.createElement('div');
     const titleElement = document.createElement('h2');
     titleElement.textContent = details.title;
@@ -129,7 +136,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const taglineElement = document.createElement('p');
     taglineElement.innerHTML = `<strong>Tagline:</strong> ${details.tagline || 'Not available'}`;
     rightSection.appendChild(taglineElement);
-  
+
     detailsContainer.appendChild(leftSection);
     detailsContainer.appendChild(rightSection);
     modalDetails.appendChild(detailsContainer);
@@ -141,7 +148,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const totalPages = Math.ceil(totalMovies / moviesPerPage);
     paginationContainer.innerHTML = '';
 
-    const visiblePages = 5; 
+    const visiblePages = 5;
     const sideButtons = Math.floor(visiblePages / 2);
 
     let startPage = currentPage - sideButtons;
@@ -199,7 +206,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   async function performSearch(searchQuery, page = 1) {
     currentPage = page;
-    const totalMovies = 900; 
+    const totalMovies = 900;
     const moviesPerPage = 9;
     const totalPages = Math.ceil(totalMovies / moviesPerPage);
 
@@ -216,7 +223,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         movies.push(...results.results);
       }
 
-
       if (movies.length >= totalMovies) {
         break;
       }
@@ -224,59 +230,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     displayMovies(movies);
 
-
     if (currentPageButton) {
       currentPageButton.classList.remove('active');
     }
 
     renderPagination(movies.length);
   }
-
-  searchForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    performSearch(searchInput.value.trim());
-  });
-
-  let searchTimeout;
-  const debounceDelay = 0;
-
-  async function performSearch(searchQuery, page = 1) {
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(async () => {
-      currentPage = page;
-      const totalMovies = 900; 
-      const totalPages = Math.ceil(totalMovies / moviesPerPage);
-
-      const movies = [];
-      const fetchPromises = [];
-
-      for (let p = 1; p <= totalPages; p++) {
-        const url = searchQuery.trim() === ''
-          ? `${trendingMoviesEndpoint}?api_key=${apiKey}&page=${p}`
-          : `${searchMoviesEndpoint}?api_key=${apiKey}&query=${searchQuery}&page=${p}`;
-
-        fetchPromises.push(fetchMovies(url));
-      }
-
-      const results = await Promise.all(fetchPromises);
-
-      results.forEach(result => {
-        if (result.results) {
-          movies.push(...result.results);
-        }
-      });
-
-      displayMovies(movies);
-
-
-      if (currentPageButton) {
-        currentPageButton.classList.remove('active');
-      }
-
-      renderPagination(movies.length);
-    }, debounceDelay);
-  }
-
 
   await performSearch('', currentPage);
 });
