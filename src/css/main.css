@@ -445,7 +445,7 @@ div#pagination button.active {
 
 .modal__btn--watched:hover,
 .modal__btn--watched:focus {
-  background-color: #0d96fadd;
+  background-color: #fa0d34dd;
   color: #ffffff;
   border: 1px solid #0d96fadd;
   transition: all 250ms ease-in;
@@ -468,7 +468,7 @@ div#pagination button.active {
 
 .modal__btn--queue:hover,
 .modal__btn--queue:focus {
-  background-color: #0d96fadd;
+  background-color: #fa0d19dd;
   color: #ffffff;
   border: 1px solid #0d96fadd;
   transition: all 250ms ease-in;
