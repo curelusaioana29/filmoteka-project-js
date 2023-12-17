@@ -50,14 +50,14 @@ footer#bottom div.footer-container div.developers-team svg {
   width: 14px;
   height: 12.88px;
   flex-shrink: 0;
-  transform: heartBeat 2s infinite;
+  animation: heartbeat 2s infinite;
 }
-@keyframes heartBeat {
+@keyframes heartbeat {
   0%, 100% {
     transform: scale(1);
   }
-  50% {
-    transform: scale(1.5);
+  25% {
+    transform: scale(1.2);
   }
 }
 footer#bottom div.footer-container div.developers-team button {
