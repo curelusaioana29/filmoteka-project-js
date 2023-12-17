@@ -377,13 +377,15 @@ div#pagination button.active {
 
 /* Styles for modal */
 .modal {
-  display: none;
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.7);
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
@@ -410,7 +412,7 @@ div#pagination button.active {
   cursor: pointer;
 }
 
-.button-list {
+ .button-list {
   height: 44px;
   display: flex;
   justify-content: center;
@@ -431,18 +433,53 @@ div#pagination button.active {
 
 
 
-
-.modal__btn--watched:hover {
-  background-color:#0d96fadd;
-  color: #fff;
-
+.modal__btn--watched {
+  width: 110px;
+  height: 44px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  border: 1px solid #000;
+  background: #ffffff;
+  color: #000;
+  padding: 0 5px;
+  transition: all 250ms ease-in;
 }
 
-.modal__btn--queue:hover {
-  background-color:#0d96fadd;
 
+.modal__btn--watched:hover,
+.modal__btn--watched:focus {
+  background-color: #0d96fadd;
+  color: #ffffff;
+  border: 1px solid #0d96fadd;
+  transition: all 250ms ease-in;
 }
 
+.modal__btn--queue {
+  width: 110px;
+  height: 44px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  border: 1px solid #000;
+  background: #ffffff;
+  color: #000;
+  padding: 0 5px;
+  transition: all 250ms ease-in;
+}
+
+
+.modal__btn--queue:hover,
+.modal__btn--queue:focus {
+  background-color: #0d96fadd;
+  color: #ffffff;
+  border: 1px solid #0d96fadd;
+  transition: all 250ms ease-in;
+}
 
 .vote-average-text {
   font-family: Roboto, sans-serif;
@@ -466,3 +503,5 @@ div#pagination button.active {
 .slash {
   color: #0d96fadd; 
 }
+
+
