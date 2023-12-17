@@ -7,6 +7,10 @@
   --transition: 350ms ease-in-out;
   --title-transition: 500ms ease-in-out;
 }
+head {
+  background-color: #0d96fa;
+  color: #0d96fa;
+}
 body {
   font-family: Roboto;
   font-weight: 500;
