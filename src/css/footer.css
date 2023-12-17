@@ -50,6 +50,15 @@ footer#bottom div.footer-container div.developers-team svg {
   width: 14px;
   height: 12.88px;
   flex-shrink: 0;
+  transform: heartBeat 2s infinite;
+}
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
 }
 footer#bottom div.footer-container div.developers-team button {
   color: #545454;
