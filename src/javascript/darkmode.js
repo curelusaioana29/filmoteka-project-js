@@ -2,8 +2,8 @@ export function initializeDarkModeToggle() {
   const BUTTON_DARK_MODE = document.getElementsByClassName('dark-mode')[0];
   let svgDarkModeChild = document.getElementsByClassName('dark-mode')[2];
   const bodyStyle = document.getElementsByTagName('body')[0];
-  const arrowsLink = document.getElementById('arrow-link');
-  const arrowsSvg = document.getElementById('arrow-svg');
+  const arrowsLink = document.querySelectorAll('#arrow-link');
+  const arrowsSvg = document.querySelectorAll('#arrow-svg');
 
   // Function to set dark mode
   let setDarkMode = function () {
