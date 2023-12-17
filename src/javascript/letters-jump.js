@@ -5,13 +5,13 @@ export function initializeLettersJump() {
   function jumpLetters() {
     letterList.forEach(function (letter, index) {
       setTimeout(function () {
-        letter.style.transition = 'transform 0.2s ease-in-out';
+        letter.style.transition = 'transform 0.3s ease-in-out';
         letter.style.transform = 'translateY(-15px)';
 
         setTimeout(function () {
           letter.style.transition = '';
           letter.style.transform = 'translateY(0)';
-        }, 200);
+        }, 350);
       }, index * 100);
     });
   }
