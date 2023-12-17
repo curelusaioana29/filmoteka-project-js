@@ -104,8 +104,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     posterImage.style.width = '100%'; 
     posterImage.style.height = '100%'; 
     posterImage.style.objectFit = 'cover'; 
-    leftSection.appendChild(posterImage);
-    leftSection.appendChild(posterImage);
     const rightSection = document.createElement('div');
     const titleElement = document.createElement('h2');
     titleElement.textContent = details.title;
