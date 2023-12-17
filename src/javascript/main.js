@@ -137,8 +137,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     detailsContainer.appendChild(leftSection);
     detailsContainer.appendChild(rightSection);
     modalDetails.appendChild(detailsContainer);
-  
-    movieModal.style.display = 'block';
   }
 
   function renderPagination(totalMovies) {
