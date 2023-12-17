@@ -154,7 +154,7 @@ header#header-bkg div.title-container svg {
   width: 32px;
   height: 32px;
   flex-shrink: 0;
-  stroke: #fff;
+  stroke: #000;
 }
 /* Title List */
 header#header-bkg div.title-container ul {
@@ -166,7 +166,7 @@ header#header-bkg div.title-container li {
   list-style: none;
 }
 header#header-bkg div.title-container a {
-  color: #ffffff;
+  color: #000;
   text-align: center;
   font-size: 32px;
   font-style: normal;
