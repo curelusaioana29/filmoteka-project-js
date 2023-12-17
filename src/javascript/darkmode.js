@@ -32,6 +32,8 @@ export function initializeDarkModeToggle() {
     BUTTON_DARK_MODE.classList.add('active');
 
     bodyStyle.setAttribute('style', 'background-color: #ffffffdd');
+    arrowsLink.setAttribute('style', 'border: 1px solid #000');
+    arrowsSvg.setAttribute('style', 'color: #000');
 
     // Save user preference in localStorage
     localStorage.setItem('darkMode', 'off');
