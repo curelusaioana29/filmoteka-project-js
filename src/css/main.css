@@ -444,8 +444,10 @@ div#pagination button.active {
 }
 
 .modal__btn--watched:hover,
-.modal__btn--watched:focus {
-  background-color: #fa0d34dd;
+.modal__btn--watched:focus,
+.modal__btn--queue:hover,
+.modal__btn--queue:focus {
+  background-color: #0d96fadd;
   color: #ffffff;
   border: 1px solid #0d96fadd;
   transition: all 250ms ease-in;
@@ -465,15 +467,6 @@ div#pagination button.active {
   padding: 0 5px;
   transition: all 250ms ease-in;
 }
-
-.modal__btn--queue:hover,
-.modal__btn--queue:focus {
-  background-color: #fa0d34dd;
-  color: #ffffff;
-  border: 1px solid #fa0d34dd;
-  transition: all 250ms ease-in;
-}
-
 .vote-average-text {
   font-family: Roboto, sans-serif;
   font-style: normal;
