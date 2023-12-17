@@ -468,7 +468,7 @@ div#pagination button.active {
 
 .modal__btn--queue:hover,
 .modal__btn--queue:focus {
-  background-color: #fa0d19dd;
+  background-color: #0d96fadd;
   color: #ffffff;
   border: 1px solid #0d96fadd;
   transition: all 250ms ease-in;
