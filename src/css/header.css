@@ -235,13 +235,6 @@ header#header-bkg div.form svg {
 /* User List */
 header#header-bkg div.user-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-header#header-bkg div.user-list div.user-option {
-  display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
@@ -269,33 +262,8 @@ header#header-bkg div.user-list button.watched:hover,
 header#header-bkg div.user-list button.queue:hover {
   background-color: var(--hover-color);
 }
-header#header-bkg div.user-list button.clear-wathed-list,
-header#header-bkg div.user-list button.clear-queue-list {
-  text-align: center;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  text-transform: uppercase;
-  display: flex;
-  padding: 8px 26px;
-  align-items: flex-start;
-  gap: 10px;
-  border-radius: 100px;
-  transition: var(--transition);
-  color: #000;
-  background-color: #fff;
-  border: none;
-  cursor: pointer;
-}
-header#header-bkg div.user-list button.clear-wathed-list:hover,
-header#header-bkg div.user-list button.clear-queue-list:hover {
-  background-color: var(--second-backgroun-color);
-  color: var(--hover-color);
-}
 /* Form / User List - Hidden */
-header#header-bkg div.hidden,
-header#header-bkg div.user-list button.hidden {
+header#header-bkg div.hidden {
   display: none;
 }
 /* Scroll Arrows */
@@ -466,10 +434,6 @@ header#header-bkg ul.arrows svg.bottom {
     font-size: 16px;
     color: #fff;
     background-color: #000;
-  }
-  header#header-bkg div.user-list button.clear-wathed-list,
-  header#header-bkg div.user-list button.clear-queue-list {
-    font-size: 14px;
   }
   /* Form / User List - Hidden */
   /* Scroll Arrows */

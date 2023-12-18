@@ -10,10 +10,8 @@
     <!-- Navigation / Darkmode -->
     <div class="navigation">
       <!-- Navigation -->
-      <button class="home" data-request="home" aria-label="home">HOME</button>
-      <button class="library" data-request="library" aria-label="my library">
-        MY LIBRARY
-      </button>
+      <button class="home">HOME</button>
+      <button class="library">MY LIBRARY</button>
       <!-- Darkmode Button -->
       <button class="dark-mode active">
         <svg class="dark-mode">
@@ -46,7 +44,7 @@
     <!-- UI -->
     <div class="header-container">
       <!-- Form -->
-      <div class="form ">
+      <div class="form hidden">
         <form class="search-movie">
           <input
             type="text"
@@ -62,19 +60,9 @@
         </form>
       </div>
       <!-- User List -->
-      <div class="user-list hidden">
-        <div class="user-option">
-          <button class="watched" data-request="watched" aria-label="watched">
-            WATCHED
-          </button>
-          <button class="queue" data-request="queue" aria-label="queue">
-            QUEUE
-          </button>
-        </div>
-        <button class="clear-wathed-list" data-request="clear">
-          CLEAR WATCHED LIST
-        </button>
-        <button class="clear-queue-list hidden">CLEAR QUEUE LIST</button>
+      <div class="user-list">
+        <button class="watched">WATCHED</button>
+        <button class="queue">QUEUE</button>
       </div>
     </div>
   </div>
