@@ -5,7 +5,7 @@ export function initializeScrollButtons() {
 
     const middleOfPage = window.innerHeight / 2;
 
-    const prevScrollPosition = window.scrollY;
+    let prevScrollPosition = window.scrollY;
 
     function handleScroll() {
       const scrollPosition = window.scrollY;
@@ -26,4 +26,6 @@ export function initializeScrollButtons() {
     handleScroll();
   });
 }
+
+// Call the exported function
 initializeScrollButtons();
