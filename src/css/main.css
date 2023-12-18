@@ -2,6 +2,10 @@ div#movieList {
   width: 100%;
   height: 100%;
 }
+div#movieList.hidden,
+div#pagination.hidden {
+  display: none;
+}
 div#movieList ul {
   margin: 0;
   padding: 0;
